@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MNIST Digit Classification | Zeina Farghaly</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:#0f172a;color:#fff;line-height:1.7}
+nav{display:flex;justify-content:center;gap:28px;padding:18px;background:#111827;border-bottom:1px solid #1e293b}
+nav a{color:#cbd5e1;text-decoration:none;font-weight:600}
+nav a:hover{color:#38bdf8}
+main{max-width:1000px;margin:auto;padding:50px 24px}
+.hero{text-align:center;margin-bottom:40px}
+h1{font-size:44px;color:#38bdf8}
+h2{color:#38bdf8;margin:35px 0 15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:#1e293b;padding:20px;border-radius:14px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;margin:25px 0}
+.stat{background:#1e293b;padding:18px;border-radius:14px;text-align:center}
+.stat h3{color:#38bdf8;font-size:32px}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.gallery img{width:100%;border-radius:10px;border:1px solid #334155}
+.btn{display:inline-block;margin-top:24px;padding:12px 24px;background:#38bdf8;color:#fff;text-decoration:none;border-radius:30px}
+ul{padding-left:20px}
+footer{text-align:center;padding:35px;color:#94a3b8}
+</style>
+</head>
+<body>
+<nav>
+<a href="index.html">Home</a>
+<a href="index.html#projects">Projects</a>
+</nav>
+<main>
+<div class="hero">
+<h1>MNIST Digit Classification</h1>
+<p>Deep Learning Case Study</p>
+<p>Building and optimizing a neural network with TensorFlow and Keras to recognize handwritten digits.</p>
+<a class="btn" href="index.html#projects">← Back to Portfolio</a>
+</div>
+
+<div class="stats">
+<div class="stat"><h3>60K</h3><p>Training Images</p></div>
+<div class="stat"><h3>10K</h3><p>Testing Images</p></div>
+<div class="stat"><h3>10</h3><p>Classes</p></div>
+<div class="stat"><h3>89.6%</h3><p>Test Accuracy</p></div>
+</div>
+
+<h2>Project Overview</h2>
+<p>This project uses the MNIST handwritten digit dataset to train a fully connected neural network. The goal was to explore the complete deep learning workflow, including preprocessing, model design, training, evaluation, and hyperparameter tuning.</p>
+
+<h2>Technologies</h2>
+<div class="grid">
+<div class="card">Python</div>
+<div class="card">TensorFlow</div>
+<div class="card">Keras</div>
+<div class="card">NumPy</div>
+<div class="card">Matplotlib</div>
+</div>
+
+<h2>Workflow</h2>
+<div class="grid">
+<div class="card"><h3>Preprocessing</h3><ul><li>Normalized pixel values</li><li>Flattened 28×28 images</li><li>One-hot encoded labels</li></ul></div>
+<div class="card"><h3>Model</h3><ul><li>Dense (256) + ReLU</li><li>Dense (128) + ReLU</li><li>Softmax output layer</li></ul></div>
+<div class="card"><h3>Training</h3><ul><li>Adam optimizer</li><li>EarlyStopping</li><li>ModelCheckpoint</li><li>Validation split</li></ul></div>
+</div>
+
+<h2>Results</h2>
+<p>The final model achieved approximately <strong>89.6% test accuracy</strong>. Multiple experiments with optimizers, callbacks, and regularization techniques were performed to improve generalization and reduce overfitting.</p>
+
+<h2>Project Gallery</h2>
+<p>Replace the filenames below with your screenshots.</p>
+<div class="gallery">
+<img src="assets/mnist-training.png" alt="">
+<img src="assets/mnist-accuracy.png" alt="">
+<img src="assets/mnist-loss.png" alt="">
+<img src="assets/mnist-predictions.png" alt="">
+</div>
+
+<h2>Lessons Learned</h2>
+<ul>
+<li>Data preprocessing is critical for neural network performance.</li>
+<li>EarlyStopping helps prevent overfitting.</li>
+<li>ModelCheckpoint preserves the best-performing model.</li>
+<li>Hyperparameter tuning improves model generalization.</li>
+</ul>
+
+<h2>Future Improvements</h2>
+<ul>
+<li>Convolutional Neural Networks (CNNs)</li>
+<li>Data augmentation</li>
+<li>Learning rate scheduling</li>
+<li>More architecture experiments</li>
+</ul>
+
+<a class="btn" href="index.html#projects">← Return to Portfolio</a>
+</main>
+<footer>© 2026 Zeina Farghaly</footer>
+</body></html>
