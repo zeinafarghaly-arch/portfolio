@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fashion MNIST Classification | Zeina Farghaly</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:#0f172a;color:#fff;line-height:1.7}
+nav{position:sticky;top:0;background:#111827;border-bottom:1px solid #1e293b;padding:18px;display:flex;justify-content:center;gap:28px}
+nav a{color:#cbd5e1;text-decoration:none;font-weight:600}nav a:hover{color:#38bdf8}
+main{max-width:1000px;margin:auto;padding:50px 24px}
+.hero{text-align:center;margin-bottom:40px}
+h1{font-size:46px;color:#38bdf8}h2{color:#38bdf8;margin:36px 0 16px}
+p{color:#d1d5db}
+.stats,.grid,.gallery{display:grid;gap:18px}
+.stats{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card,.stat{background:#1e293b;padding:20px;border-radius:14px}
+.stat{text-align:center}.stat h3{font-size:30px;color:#38bdf8}
+.gallery{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.gallery img{width:100%;border-radius:10px;border:1px solid #334155}
+.btn{display:inline-block;margin-top:22px;background:#38bdf8;color:#fff;text-decoration:none;padding:12px 24px;border-radius:30px}
+ul{padding-left:20px}footer{text-align:center;padding:35px;color:#94a3b8}
+</style></head>
+<body>
+<nav><a href="index.html">Home</a><a href="index.html#projects">Projects</a></nav>
+<main>
+<section class="hero">
+<h1>Fashion MNIST Classification</h1>
+<p><strong>Deep Learning Case Study</strong></p>
+<p>Classification of clothing images using TensorFlow and Keras with extensive experimentation to improve model performance.</p>
+<a class="btn" href="index.html#projects">← Back to Portfolio</a>
+</section>
+
+<h2>Dataset</h2>
+<div class="stats">
+<div class="stat"><h3>60,000</h3><p>Training Images</p></div>
+<div class="stat"><h3>10,000</h3><p>Testing Images</p></div>
+<div class="stat"><h3>28×28</h3><p>Image Size</p></div>
+<div class="stat"><h3>10</h3><p>Classes</p></div>
+</div>
+
+<h2>Project Overview</h2>
+<p>This project uses the Fashion MNIST dataset to classify grayscale images of clothing items. I designed and trained a fully connected neural network using TensorFlow and Keras while experimenting with optimizers, learning rates, callbacks, and regularization techniques to improve accuracy and reduce overfitting.</p>
+
+<h2>Technologies</h2>
+<div class="grid">
+<div class="card">Python</div><div class="card">TensorFlow</div><div class="card">Keras</div><div class="card">NumPy</div><div class="card">Matplotlib</div>
+</div>
+
+<h2>Workflow</h2>
+<div class="grid">
+<div class="card"><h3>Preprocessing</h3><ul><li>Normalized pixel values</li><li>Flattened images</li><li>One-hot encoded labels</li></ul></div>
+<div class="card"><h3>Model Architecture</h3><ul><li>Input: 784 features</li><li>Dense hidden layers with ReLU</li><li>Softmax output (10 classes)</li></ul></div>
+<div class="card"><h3>Experiments</h3><ul><li>Adam vs RMSprop</li><li>Learning rate tuning</li><li>L1 & L2 regularization</li><li>EarlyStopping</li><li>ModelCheckpoint</li></ul></div>
+</div>
+
+<h2>Results</h2>
+<p>The best model achieved approximately <strong>89.7% test accuracy</strong>. By comparing different optimizers and training strategies, I improved generalization while reducing overfitting. EarlyStopping and ModelCheckpoint helped preserve the best-performing model automatically.</p>
+
+<h2>Project Gallery</h2>
+<p>Replace these placeholder filenames with your screenshots.</p>
+<div class="gallery">
+<img src="assets/fashion-training.png">
+<img src="assets/fashion-accuracy.png">
+<img src="assets/fashion-loss.png">
+<img src="assets/fashion-predictions.png">
+</div>
+
+<h2>Lessons Learned</h2>
+<ul>
+<li>Data preprocessing strongly influences model performance.</li>
+<li>Hyperparameter tuning improves accuracy.</li>
+<li>EarlyStopping helps prevent overfitting.</li>
+<li>ModelCheckpoint saves the best-performing model.</li>
+<li>Fashion MNIST is more challenging than MNIST because several clothing classes have similar visual patterns.</li>
+</ul>
+
+<h2>Future Improvements</h2>
+<ul>
+<li>Implement Convolutional Neural Networks (CNNs).</li>
+<li>Add Batch Normalization.</li>
+<li>Experiment with Dropout.</li>
+<li>Use learning rate scheduling.</li>
+<li>Compare with transfer learning models.</li>
+</ul>
+
+<a class="btn" href="index.html#projects">← Return to Portfolio</a>
+</main>
+<footer>© 2026 Zeina Farghaly</footer>
+</body></html>
