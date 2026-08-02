@@ -183,8 +183,13 @@ A complete hospital management system developed using Java, JavaFX, SQLite, and 
 </div>
  
 <div class="stat">
-<h2>OOP</h2>
-<p>Architecture</p>
+<h2>5</h2>
+<p>User Roles</p>
+</div>
+ 
+<div class="stat">
+<h2>10 Days</h2>
+<p>Team Build</p>
 </div>
  
 </div>
@@ -193,7 +198,7 @@ A complete hospital management system developed using Java, JavaFX, SQLite, and 
  
 <p>
  
-The Smart Hospital Management System (SHMS) is a desktop application that streamlines hospital operations through an intuitive interface. The project demonstrates software engineering fundamentals including object-oriented programming, database integration, and GUI development.
+The Smart Hospital Management System (SHMS) is a desktop application built by a team over 10 days as an Object-Oriented Programming course project at AASTMT. It handles day-to-day hospital operations — patient registration, appointment scheduling, billing, prescriptions, room assignments, discharge summaries, and audit logging — across five distinct user roles: Admin, Doctor, Nurse, Receptionist, and Patient, each with its own dashboard and permissions.
  
 </p>
  
@@ -206,7 +211,7 @@ Java
 </div>
  
 <div class="card">
-JavaFX
+JavaFX (FXML)
 </div>
  
 <div class="card">
@@ -218,11 +223,15 @@ JDBC
 </div>
  
 <div class="card">
-Git
+SHA-256 Password Hashing
 </div>
  
 <div class="card">
-Object-Oriented Programming
+MVC Architecture
+</div>
+ 
+<div class="card">
+Git
 </div>
  
 </div>
@@ -271,7 +280,7 @@ Object-Oriented Programming
  
 <ul>
  
-<li>Priority Queue</li>
+<li>Priority-based queueing (Emergency, Urgent, Normal)</li>
  
 <li>Critical patient handling</li>
  
@@ -297,6 +306,58 @@ Object-Oriented Programming
  
 </div>
  
+<div class="card">
+ 
+<h3>User Authentication & Security</h3>
+ 
+<ul>
+ 
+<li>Role-based login across 5 roles (Admin, Doctor, Nurse, Receptionist, Patient)</li>
+ 
+<li>SHA-256 password hashing</li>
+ 
+<li>Account lockout after multiple failed login attempts</li>
+ 
+<li>Session timeout with automatic logout after inactivity</li>
+ 
+<li>Audit logging of login activity and system access</li>
+ 
+</ul>
+ 
+</div>
+ 
+<div class="card">
+ 
+<h3>Notifications & Records</h3>
+ 
+<ul>
+ 
+<li>Automated email notifications for appointment bookings and patient discharge</li>
+ 
+<li>Double-booking detection using custom exceptions</li>
+ 
+<li>Auto-generated discharge summaries</li>
+ 
+</ul>
+ 
+</div>
+ 
+<div class="card">
+ 
+<h3>Dashboard & Live Data</h3>
+ 
+<ul>
+ 
+<li>Live dashboard statistics via background thread updates</li>
+ 
+<li>Doctor rating and sorting using Comparator</li>
+ 
+<li>Dynamic greetings and real-time clock</li>
+ 
+</ul>
+ 
+</div>
+ 
 </div>
  
 <h2>Software Engineering Concepts</h2>
@@ -312,6 +373,22 @@ Object-Oriented Programming
 <li>Composition</li>
  
 <li>Encapsulation</li>
+ 
+<li>Abstraction</li>
+ 
+<li>Interfaces</li>
+ 
+<li>Composition</li>
+ 
+<li>Generics</li>
+ 
+<li>Custom Exceptions</li>
+ 
+<li>Multithreading</li>
+ 
+<li>Comparable & Comparator</li>
+ 
+<li>Design Patterns (Singleton, Observer)</li>
  
 <li>MVC Design</li>
  
@@ -354,11 +431,7 @@ Object-Oriented Programming
  
 <ul>
  
-<li>User authentication with role-based access.</li>
- 
 <li>Medical reports in PDF format.</li>
- 
-<li>Email appointment reminders.</li>
  
 <li>Cloud database support.</li>
  
@@ -382,3 +455,4 @@ Object-Oriented Programming
  
 </body>
 </html>
+
