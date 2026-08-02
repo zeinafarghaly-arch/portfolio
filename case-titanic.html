@@ -1,31 +1,32 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Titanic Survival Prediction | Zeina Farghaly</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
-body{background:#0f172a;color:#fff;line-height:1.7}
-nav{position:sticky;top:0;background:#111827;padding:18px;display:flex;justify-content:center;gap:28px;border-bottom:1px solid #1e293b}
-nav a{color:#cbd5e1;text-decoration:none;font-weight:600}
-nav a:hover{color:#38bdf8}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#070b14;color:#eef0f3;line-height:1.7}
+nav{position:sticky;top:0;background:#0d1524;padding:18px;display:flex;justify-content:center;gap:28px;border-bottom:1px solid #131c30}
+nav a{color:#94a1b8;text-decoration:none;font-weight:600}
+nav a:hover{color:#e2a03f}
 main{max-width:1000px;margin:auto;padding:50px 25px}
-h1{color:#38bdf8;font-size:44px}
-h2{color:#38bdf8;margin:40px 0 15px}
-p{color:#d1d5db}
+h1{color:#e2a03f;font-size:44px}
+h2{color:#e2a03f;margin:40px 0 15px}
+p{color:#94a1b8}
 .hero{text-align:center;padding:30px 0}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#1e293b;padding:20px;border-radius:14px}
+.card{background:#131c30;padding:20px;border-radius:14px}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px;margin:25px 0}
-.stat{background:#1e293b;padding:20px;border-radius:14px;text-align:center}
-.stat h3{font-size:34px;color:#38bdf8}
+.stat{background:#131c30;padding:20px;border-radius:14px;text-align:center}
+.stat h3{font-size:34px;color:#e2a03f}
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.gallery img{width:100%;border-radius:12px;border:1px solid #334155}
-.btn{display:inline-block;background:#38bdf8;color:white;padding:12px 24px;border-radius:30px;text-decoration:none;margin-top:20px}
+.gallery img{width:100%;border-radius:12px;border:1px solid #1f2b45}
+.btn{display:inline-block;background:#e2a03f;color:white;padding:12px 24px;border-radius:30px;text-decoration:none;margin-top:20px}
 ul{padding-left:20px}
-footer{text-align:center;color:#94a3b8;padding:40px}
+footer{text-align:center;color:#94a1b8;padding:40px}
+h1,h2,nav a,.stat h3,.btn{font-family:'JetBrains Mono',monospace}
 </style>
 </head>
 <body>
@@ -33,7 +34,7 @@ footer{text-align:center;color:#94a3b8;padding:40px}
 <a href="index.html">Home</a>
 <a href="index.html#projects">Projects</a>
 </nav>
-
+ 
 <main>
 <section class="hero">
 <h1>Titanic Survival Prediction</h1>
@@ -41,20 +42,20 @@ footer{text-align:center;color:#94a3b8;padding:40px}
 <p>Predicting passenger survival using classical machine learning algorithms, feature engineering, and data preprocessing.</p>
 <a class="btn" href="index.html#projects">← Back to Portfolio</a>
 </section>
-
+ 
 <div class="stats">
 <div class="stat"><h3>891</h3><p>Passengers</p></div>
 <div class="stat"><h3>3</h3><p>Models Compared</p></div>
 <div class="stat"><h3>82%</h3><p>Best Accuracy</p></div>
 <div class="stat"><h3>SVM</h3><p>Best Model</p></div>
 </div>
-
+ 
 <h2>Project Overview</h2>
 <p>
 This project predicts whether a passenger survived the Titanic disaster using demographic and travel information.
 The workflow includes data cleaning, exploratory data analysis, feature engineering, model training, and evaluation.
 </p>
-
+ 
 <h2>Technologies</h2>
 <div class="grid">
 <div class="card">Python</div>
@@ -64,7 +65,7 @@ The workflow includes data cleaning, exploratory data analysis, feature engineer
 <div class="card">Matplotlib</div>
 <div class="card">Seaborn</div>
 </div>
-
+ 
 <h2>Workflow</h2>
 <div class="grid">
 <div class="card">
@@ -92,21 +93,21 @@ The workflow includes data cleaning, exploratory data analysis, feature engineer
 </ul>
 </div>
 </div>
-
+ 
 <h2>Model Comparison</h2>
 <div class="grid">
 <div class="card"><strong>Logistic Regression</strong><br>Accuracy: 80%</div>
 <div class="card"><strong>KNN</strong><br>Accuracy: 81%</div>
 <div class="card"><strong>Support Vector Machine ⭐</strong><br>Accuracy: <strong>82%</strong></div>
 </div>
-
+ 
 <h2>Project Gallery</h2>
 <div class="gallery">
 <img src="assets/titanic_1.png" alt="Confusion Matrix Logistic">
   <img src="assets/titanic_2.png" alt="Confusion Matrix SVM">
   <img src="assets/titanic_3.png" alt="Confusion Matrix KNN">
 </div>
-
+ 
 <h2>Key Takeaways</h2>
 <ul>
 <li>Learned to clean and preprocess real-world datasets.</li>
@@ -114,7 +115,7 @@ The workflow includes data cleaning, exploratory data analysis, feature engineer
 <li>Applied feature engineering to improve model performance.</li>
 <li>Evaluated models using accuracy and confusion matrices.</li>
 </ul>
-
+ 
 <h2>Future Improvements</h2>
 <ul>
 <li>Random Forest</li>
@@ -122,10 +123,10 @@ The workflow includes data cleaning, exploratory data analysis, feature engineer
 <li>Cross Validation</li>
 <li>GridSearchCV</li>
 </ul>
-
+ 
 <a class="btn" href="index.html#projects">← Return to Portfolio</a>
 </main>
-
+ 
 <footer>© 2026 Zeina Farghaly</footer>
 </body>
 </html>
