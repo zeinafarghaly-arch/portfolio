@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlyRank ML Internship — Content Refresh Prioritization | Zeina Farghaly</title>
+
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#070b14;
+color:white;
+line-height:1.7;
+}
+
+nav{
+display:flex;
+justify-content:center;
+gap:30px;
+padding:18px;
+background:#0d1524;
+border-bottom:1px solid #131c30;
+}
+
+nav a{
+color:#94a1b8;
+text-decoration:none;
+font-weight:600;
+}
+
+nav a:hover{
+color:#e2a03f;
+}
+
+main{
+max-width:1000px;
+margin:auto;
+padding:50px 30px;
+}
+
+.hero{
+text-align:center;
+margin-bottom:40px;
+}
+
+.hero h1{
+font-size:42px;
+color:#e2a03f;
+}
+
+.hero p{
+margin-top:15px;
+color:#94a1b8;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+margin:35px 0;
+}
+
+.stat{
+background:#131c30;
+padding:20px;
+border-radius:15px;
+text-align:center;
+}
+
+.stat h2{
+color:#e2a03f;
+font-size:28px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:25px;
+}
+
+.card{
+background:#131c30;
+padding:22px;
+border-radius:15px;
+}
+
+.card h3{
+color:#e2a03f;
+margin-bottom:10px;
+font-family:'JetBrains Mono',monospace;
+font-size:15px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:18px;
+margin-top:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:12px;
+border:1px solid #1f2b45;
+}
+
+.button{
+display:inline-block;
+margin-top:30px;
+background:#e2a03f;
+padding:14px 26px;
+border-radius:30px;
+color:#070b14;
+text-decoration:none;
+font-weight:700;
+}
+
+h2{
+color:#e2a03f;
+margin:35px 0 15px;
+}
+
+ul{
+padding-left:20px;
+}
+
+.note{
+background:#131c30;
+border-left:3px solid #e2a03f;
+padding:14px 18px;
+border-radius:6px;
+color:#94a1b8;
+font-size:14px;
+margin-top:16px;
+}
+
+code{
+font-family:'JetBrains Mono',monospace;
+background:#131c30;
+padding:2px 6px;
+border-radius:4px;
+font-size:13px;
+color:#e2a03f;
+}
+
+footer{
+text-align:center;
+padding:35px;
+color:#94a1b8;
+}
+
+h1,h2,nav a,.stat h3,.btn{font-family:'JetBrains Mono',monospace}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="index.html#projects">Projects</a>
+</nav>
+
+<main>
+
+<section class="hero">
+
+<h1>FlyRank ML Internship</h1>
+
+<p>
+Content Refresh Prioritization • Applied Search Intelligence
+</p>
+
+<p>
+Built a scoring model that ranks which pages on a client's site are most worth reviewing first, using real (anonymized) Google Search Console data at scale — with an explicit data contract, a deliberate leakage trap, and a model that beats a hand-written baseline on the metric that matters.
+</p>
+
+<a class="button" href="index.html#projects">
+← Back to Portfolio
+</a>
+
+</section>
+
+<div class="stats">
+
+<div class="stat">
+<h2>9.8M</h2>
+<p>Rows Queried (DuckDB)</p>
+</div>
+
+<div class="stat">
+<h2>55</h2>
+<p>Anonymized Clients</p>
+</div>
+
+<div class="stat">
+<h2>0.528</h2>
+<p>Precision@500 (Model)</p>
+</div>
+
+<div class="stat">
+<h2>0.598</h2>
+<p>Honest AUC (Leakage Check)</p>
+</div>
+
+</div>
+
+<h2>The Decision</h2>
+
+<p>
+Editors can't review every page on a client's site every month. The question this project answers: <strong>which pages should get reviewed first?</strong> I framed this as a <strong>scoring</strong> task — rank content pages by an opportunity score, and check how many of the top-ranked pages are actually declining. The metric I committed to before training anything: <strong>Precision@500</strong> — of the top 500 pages by score, what fraction are truly declining pages worth a human's time.
+</p>
+
+<h2>Data Contract First</h2>
+
+<p>
+Before any modeling, I queried the FlyRank internship warehouse directly with DuckDB (9.84M rows across 55 anonymized clients and 331K content pages, March 2026) and verified my assumptions with actual queries rather than trusting them:
+</p>
+
+<div class="cards">
+
+<div class="card">
+<h3>Grain Check</h3>
+<p>Verified one row = one (page, client, day). Zero duplicate combinations found across 9.8M rows.</p>
+</div>
+
+<div class="card">
+<h3>Availability Check</h3>
+<p>Only 4.2% of rows had real GA4 data — so the feature set was built to not depend on it being present.</p>
+</div>
+
+<div class="card">
+<h3>Decision-Moment Cutoff</h3>
+<p>Every feature is built only from the first half of March. Nothing from the scoring window leaks into the inputs.</p>
+</div>
+
+</div>
+
+<h2>The Leakage Trap</h2>
+
+<p>
+To prove the feature set was actually clean (not just claimed clean), I deliberately built the leaky version first, then removed it:
+</p>
+
+<div class="gallery">
+<img src="assets/flyrank-leakage.png" alt="Bar chart: honest AUC 0.598 using 5 real features vs leaky AUC 1.000 when the label's source column is included">
+</div>
+
+<p style="margin-top:16px">
+Using only the 5 legitimate, decision-moment-safe features (impressions, clicks, average position, CTR, and GA4 availability — all from the first half of the month), the honest model scored <strong>AUC 0.598</strong>. Adding <code>imp_h2</code> — the exact column the label is computed from — pushed the score to a suspicious <strong>AUC 1.000</strong>. That's not a better model, it's the model re-deriving the label from its own source. I removed the leak and reported the honest number.
+</p>
+
+<h2>The Model</h2>
+
+<p>
+For the final scoring model I used Logistic Regression — interpretable, fast, and gives a probability I can rank pages by. I split by <code>client_id</code> rather than by row (GroupShuffleSplit), so no client appears in both train and test — a fairer test of generalization to clients the model hasn't seen. Trained on 22,885 rows, tested on 7,115.
+</p>
+
+<div class="gallery">
+<img src="assets/flyrank-precision.png" alt="Bar chart: Precision at 500 for baseline rule (0.490) vs Logistic Regression (0.528)">
+</div>
+
+<p style="margin-top:16px">
+The model beat the Week 4 hand-written baseline rule on the held-out test set: <strong>0.490 → 0.528 Precision@500</strong>. The two features it leaned on most: <code>content_age_days</code> and <code>days_since_last_update</code> — both make intuitive sense, since stale, aging pages are more likely to be declining.
+</p>
+
+<h2>Tech Stack</h2>
+
+<div class="cards">
+<div class="card">DuckDB</div>
+<div class="card">pandas / scikit-learn</div>
+<div class="card">Logistic Regression</div>
+<div class="card">GroupShuffleSplit</div>
+<div class="card">Hugging Face-hosted warehouse</div>
+</div>
+
+<h2>Lessons Learned</h2>
+
+<ul>
+<li>A data contract isn't a formality — the grain and availability checks caught assumptions I would have otherwise just trusted.</li>
+<li>Leakage doesn't always look obviously wrong. AUC 1.000 was the red flag, not a "hint" in the data itself.</li>
+<li>Splitting by client, not by row, is the honest way to test generalization when the real deployment question is "will this work on a client I haven't seen yet."</li>
+<li>A modest, real improvement (0.490 → 0.528) reported honestly is worth more than an inflated number from a leaky pipeline.</li>
+</ul>
+
+<div class="note">
+All data used is anonymized and provided under FlyRank's internship data-use terms — no client names, domains, or private queries appear anywhere in this project.
+</div>
+
+<a class="button" href="index.html#projects">
+← Return to Portfolio
+</a>
+
+</main>
+
+<footer>
+© 2026 Zeina Farghaly
+</footer>
+
+</body>
+</html>
