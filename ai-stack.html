@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My AI Stack — Zeina Farghaly</title>
+ 
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+<style>
+ 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+ 
+body{
+background:#070b14;
+color:white;
+line-height:1.7;
+}
+ 
+nav{
+display:flex;
+justify-content:center;
+gap:30px;
+padding:18px;
+background:#0d1524;
+border-bottom:1px solid #131c30;
+}
+ 
+nav a{
+color:#94a1b8;
+text-decoration:none;
+font-weight:600;
+}
+ 
+nav a:hover{
+color:#e2a03f;
+}
+ 
+main{
+max-width:1000px;
+margin:auto;
+padding:50px 30px;
+}
+ 
+.hero{
+text-align:center;
+margin-bottom:40px;
+}
+ 
+.hero h1{
+font-size:42px;
+color:#e2a03f;
+}
+ 
+.hero p{
+margin-top:15px;
+color:#94a1b8;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+ 
+h2{
+color:#e2a03f;
+margin:40px 0 15px;
+}
+ 
+h3{
+color:#eef0f3;
+margin:22px 0 8px;
+font-family:'JetBrains Mono',monospace;
+font-size:16px;
+}
+ 
+.layer{
+background:#131c30;
+border:1px solid #1f2b45;
+border-radius:14px;
+padding:25px 28px;
+margin-top:18px;
+}
+ 
+.layer .stack-label{
+display:inline-block;
+font-family:'JetBrains Mono',monospace;
+font-size:11px;
+letter-spacing:.5px;
+text-transform:uppercase;
+color:#e2a03f;
+background:rgba(226,160,63,.12);
+padding:4px 10px;
+border-radius:4px;
+margin-bottom:10px;
+}
+ 
+.tool-row{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin:10px 0 14px;
+}
+ 
+.tool-row span{
+font-family:'JetBrains Mono',monospace;
+font-size:12px;
+background:#0d1524;
+border:1px solid #1f2b45;
+padding:6px 12px;
+border-radius:6px;
+color:#eef0f3;
+}
+ 
+.why{
+color:#94a1b8;
+font-size:14.5px;
+}
+ 
+.why strong{
+color:#eef0f3;
+}
+ 
+code{
+font-family:'JetBrains Mono',monospace;
+background:#0d1524;
+padding:2px 6px;
+border-radius:4px;
+font-size:13px;
+color:#e2a03f;
+}
+ 
+.button{
+display:inline-block;
+margin-top:30px;
+background:#e2a03f;
+padding:14px 26px;
+border-radius:30px;
+color:#070b14;
+text-decoration:none;
+font-weight:700;
+}
+ 
+.note{
+background:#131c30;
+border-left:3px solid #e2a03f;
+padding:14px 18px;
+border-radius:6px;
+color:#94a1b8;
+font-size:14px;
+margin-top:25px;
+}
+ 
+footer{
+text-align:center;
+padding:35px;
+color:#94a1b8;
+}
+ 
+</style>
+ 
+</head>
+ 
+<body>
+ 
+<nav>
+<a href="index.html">Home</a>
+<a href="index.html#projects">Projects</a>
+<a href="case-flyrank.html">FlyRank Case Study</a>
+</nav>
+ 
+<main>
+ 
+<section class="hero">
+<h1>My AI Stack</h1>
+<p>
+Not a list of logos — the actual layers I use, and the specific reason I reached for each one over the alternative, drawn from real projects on this site.
+</p>
+</section>
+ 
+<div class="layer">
+<span class="stack-label">Data Layer</span>
+<h3>DuckDB</h3>
+<div class="tool-row"><span>DuckDB</span><span>Parquet</span><span>Hugging Face-hosted warehouse</span></div>
+<p class="why">
+For the FlyRank internship I was querying a <strong>9.8M-row</strong> warehouse. Loading that into pandas would mean pulling the whole table into memory before I could filter anything. DuckDB runs SQL directly against the columnar files, so I could verify the data contract — row grain, GA4 availability, decision-moment cutoffs — with actual queries against the full dataset, not a sample. Pandas came in only after DuckDB had already cut the data down to something feature-sized.
+</p>
+</div>
+ 
+<div class="layer">
+<span class="stack-label">Classical ML</span>
+<h3>scikit-learn</h3>
+<div class="tool-row"><span>Logistic Regression</span><span>KNN</span><span>SVM</span><span>GroupShuffleSplit</span></div>
+<p class="why">
+I chose <strong>Logistic Regression</strong> as the FlyRank scoring model specifically because it outputs a calibrated probability I can rank pages by, and its coefficients are directly readable — I could point to <code>content_age_days</code> and <code>days_since_last_update</code> as the two features actually driving the score, which matters when the output goes to a human editor who'll ask "why this page." I used <strong><code>GroupShuffleSplit</code> by client_id</strong> rather than a random row split, because the real deployment question is whether the model generalizes to a client it's never seen — a random split would let the same client leak into both train and test and quietly overstate performance.
+</p>
+</div>
+ 
+<div class="layer">
+<span class="stack-label">Deep Learning</span>
+<h3>TensorFlow / Keras</h3>
+<div class="tool-row"><span>Dense networks</span><span>EarlyStopping</span><span>ModelCheckpoint</span></div>
+<p class="why">
+For MNIST and Fashion-MNIST I used Keras's callback system — <code>EarlyStopping</code> monitoring validation loss, <code>ModelCheckpoint</code> saving the best epoch — instead of just training for a fixed number of epochs and taking whatever came out last. On Fashion-MNIST that decision mattered: training accuracy kept climbing past epoch 10 while validation accuracy plateaued, and the callbacks caught the best-generalizing checkpoint rather than the most-overfit one.
+</p>
+</div>
+ 
+<div class="layer">
+<span class="stack-label">Metric Design</span>
+<h3>Precision@500, not plain accuracy</h3>
+<div class="tool-row"><span>Precision@k</span><span>AUC (leakage check)</span></div>
+<p class="why">
+Accuracy doesn't match how this model is actually used: an editor isn't reviewing every page, they're reviewing a fixed batch. So the metric I committed to before training was <strong>Precision@500</strong> — of the top 500 ranked pages, how many are truly declining. I used plain AUC separately, but only as a leakage diagnostic (an honest AUC of 0.598 vs. a leaky 1.000), not as the metric the model was optimized or judged against.
+</p>
+</div>
+ 
+<div class="layer">
+<span class="stack-label">Systems / Languages</span>
+<h3>Java, Python, SQL</h3>
+<div class="tool-row"><span>Java + JavaFX</span><span>SQLite</span><span>Python</span><span>SQL</span></div>
+<p class="why">
+Language choice tracked the problem, not habit. The hospital management system needed strict role-based state and a desktop UI with real concurrency (background dashboard threads, session timeouts) — Java's type system and thread model fit that better than a scripting language would have. Everything data- and model-facing (FlyRank, MNIST, Fashion-MNIST) is Python, because that's where the ML ecosystem actually lives.
+</p>
+</div>
+ 
+<div class="layer">
+<span class="stack-label">Security & Infra</span>
+<h3>Cloud Security fundamentals</h3>
+<div class="tool-row"><span>IAM</span><span>Zero Trust</span><span>CSPM</span><span>Terraform</span><span>Chronicle SIEM</span></div>
+<p class="why">
+From the Google Cloud Cybersecurity Professional Certificate: least-privilege IAM design, Zero Trust network assumptions, and Terraform for reproducible infrastructure — the same "don't trust it until you've verified it" instinct that drove the FlyRank data contract work. Chronicle SIEM and incident response are the monitoring side of that: knowing what to watch once something is deployed, not just how to deploy it safely.
+</p>
+</div>
+ 
+<div class="note">
+<strong>What's next in this stack:</strong> everything above is the data + modeling + security foundation. The layer I haven't built yet — LLM API orchestration and tool-calling for a working agent — is the next piece of this capstone.
+</div>
+ 
+<a class="button" href="index.html">
+← Back to Portfolio
+</a>
+ 
+</main>
+ 
+<footer>
+© 2026 Zeina Farghaly
+</footer>
+ 
+</body>
+</html>
