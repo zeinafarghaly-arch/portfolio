@@ -183,9 +183,8 @@ Content Refresh Prioritization • Applied Search Intelligence
 </p>
  
 <p>
-Built a scoring model that ranks which pages on a client's site are most worth reviewing first, using real (anonymized) Google Search Console data at scale — with an explicit data contract, a deliberate leakage trap, and a model that beats a hand-written baseline on the metric that matters.
+Designed and deployed a machine learning ranking model to prioritize content refresh opportunities using 9.8 million rows of anonymized production search data. Built an end-to-end pipeline including data validation, leakage detection, feature engineering, model evaluation, and an AI-powered explanation agent that outperformed a hand-crafted baseline.
 </p>
- 
 <a class="button" href="index.html#projects">
 ← Back to Portfolio
 </a>
@@ -214,6 +213,26 @@ Built a scoring model that ranks which pages on a client's site are most worth r
 <p>Honest AUC (Leakage Check)</p>
 </div>
  
+</div>
+ <h2>Project Highlights</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Production Dataset</h3>
+<p>Processed 9.8 million rows across 55 anonymized clients using DuckDB.</p>
+</div>
+
+<div class="card">
+<h3>Leakage Detection</h3>
+<p>Identified and removed a data leakage feature that falsely increased model AUC from 0.598 to 1.000.</p>
+</div>
+
+<div class="card">
+<h3>Model Performance</h3>
+<p>Improved Precision@500 from <strong>0.490</strong> to <strong>0.528</strong> compared with the rule-based baseline.</p>
+</div>
+
 </div>
  
 <h2>The Decision</h2>
@@ -288,11 +307,14 @@ Try the live agent →
 <h2>Tech Stack</h2>
  
 <div class="cards">
+<div class="card">Python</div>
 <div class="card">DuckDB</div>
-<div class="card">pandas / scikit-learn</div>
+<div class="card">Pandas</div>
+<div class="card">scikit-learn</div>
 <div class="card">Logistic Regression</div>
 <div class="card">GroupShuffleSplit</div>
-<div class="card">Hugging Face-hosted warehouse</div>
+<div class="card">Git</div>
+<div class="card">Hugging Face Data Warehouse</div>
 </div>
  
 <h2>Lessons Learned</h2>
