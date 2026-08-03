@@ -28,7 +28,9 @@ h1,h2,nav a,.stat h3,.btn{font-family:'JetBrains Mono',monospace}
 <section class="hero">
 <h1>Fashion MNIST Classification</h1>
 <p><strong>Deep Learning Case Study</strong></p>
-<p>Classification of clothing images using TensorFlow and Keras with extensive experimentation to improve model performance.</p>
+<p>
+Designed, trained, and optimized a deep learning classifier for the Fashion MNIST dataset using TensorFlow and Keras. Compared multiple architectures, optimizers, and regularization techniques, achieving <strong>89.7% test accuracy</strong>.
+</p>
 <a class="btn" href="index.html#projects">← Back to Portfolio</a>
 </section>
  
@@ -42,10 +44,37 @@ h1,h2,nav a,.stat h3,.btn{font-family:'JetBrains Mono',monospace}
  
 <h2>Project Overview</h2>
 <p>This project uses the Fashion MNIST dataset to classify grayscale images of clothing items. I designed and trained a fully connected neural network using TensorFlow and Keras while experimenting with optimizers, learning rates, callbacks, and regularization techniques to improve accuracy and reduce overfitting.</p>
+
+ <h2>Project Highlights</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h3>89.7%</h3>
+<p>Test Accuracy</p>
+</div>
+
+<div class="stat">
+<h3>16+</h3>
+<p>Training Experiments</p>
+</div>
+
+<div class="stat">
+<h3>TensorFlow</h3>
+<p>Framework</p>
+</div>
+
+<div class="stat">
+<h3>Deep Learning</h3>
+<p>Neural Network</p>
+</div>
+
+</div>
  
 <h2>Technologies</h2>
 <div class="grid">
 <div class="card">Python</div><div class="card">TensorFlow</div><div class="card">Keras</div><div class="card">NumPy</div><div class="card">Matplotlib</div>
+ <div class="card">scikit-learn</div>
 </div>
  
 <h2>Workflow</h2>
@@ -56,8 +85,14 @@ h1,h2,nav a,.stat h3,.btn{font-family:'JetBrains Mono',monospace}
 </div>
  
 <h2>Results</h2>
-<p>The best model achieved approximately <strong>89.7% test accuracy</strong>. By comparing different optimizers and training strategies, I improved generalization while reducing overfitting. EarlyStopping and ModelCheckpoint helped preserve the best-performing model automatically.</p>
- 
+<p>
+After running more than 16 training experiments, the final model achieved
+<strong>89.7% test accuracy</strong> on the Fashion MNIST test set.
+Performance improvements came from systematically comparing optimizers,
+learning rates, regularization techniques, callbacks, and network
+architectures. EarlyStopping and ModelCheckpoint reduced overfitting and
+automatically restored the highest-performing model.
+</p>
 <h2>Project Gallery</h2>
 <div class="gallery">
 <img src="assets/fashion-training.png" alt="Model C training vs validation accuracy and loss">
