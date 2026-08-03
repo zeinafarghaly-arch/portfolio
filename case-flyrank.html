@@ -275,6 +275,16 @@ For the final scoring model I used Logistic Regression — interpretable, fast, 
 The model beat the Week 4 hand-written baseline rule on the held-out test set: <strong>0.490 → 0.528 Precision@500</strong>. The two features it leaned on most: <code>content_age_days</code> (negative — older content was actually <em>less</em> likely to be declining, maybe because long-lived pages have already proven they're stable) and <code>days_since_last_update</code> (positive — the more intuitive signal: pages that haven't been touched in a while are more likely declining).
 </p>
  
+<h2>From Model to Agent</h2>
+ 
+<p>
+This case study is also the foundation for a shipped agent — a <strong>Content-Refresh Triage Agent</strong> that reuses this model's real feature set and feature weighting, with Claude reasoning over the score to explain each triage call in plain language.
+</p>
+ 
+<a class="button" href="https://portfolio-ytfzpjckqhpzz3fz3zv26t.streamlit.app/" target="_blank">
+Try the live agent →
+</a>
+ 
 <h2>Tech Stack</h2>
  
 <div class="cards">
