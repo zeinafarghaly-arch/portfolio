@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Machine Learning Portfolio | Zeina Farghaly</title>
+
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#070b14;
+color:white;
+line-height:1.7;
+}
+
+nav{
+display:flex;
+justify-content:center;
+gap:30px;
+padding:18px;
+background:#0d1524;
+border-bottom:1px solid #131c30;
+}
+
+nav a{
+color:#94a1b8;
+text-decoration:none;
+font-weight:600;
+}
+
+nav a:hover{
+color:#e2a03f;
+}
+
+main{
+max-width:1100px;
+margin:auto;
+padding:60px 30px;
+}
+
+.hero{
+text-align:center;
+margin-bottom:50px;
+}
+
+.hero h1{
+font-size:48px;
+color:#e2a03f;
+margin-bottom:15px;
+}
+
+.hero p{
+color:#94a1b8;
+max-width:760px;
+margin:auto;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:#131c30;
+padding:25px;
+border-radius:18px;
+transition:.3s;
+display:flex;
+flex-direction:column;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.card h2{
+color:#e2a03f;
+font-size:22px;
+margin-bottom:10px;
+font-family:'JetBrains Mono',monospace;
+}
+
+.tag{
+display:inline-block;
+background:#1d2942;
+color:#e2a03f;
+padding:6px 12px;
+border-radius:20px;
+font-size:13px;
+margin-bottom:15px;
+}
+
+.metric{
+font-weight:700;
+color:white;
+margin:12px 0;
+}
+
+.tech{
+color:#94a1b8;
+font-size:14px;
+margin-top:auto;
+}
+
+.btn{
+margin-top:22px;
+display:inline-block;
+background:#e2a03f;
+color:#070b14;
+text-decoration:none;
+padding:12px 22px;
+border-radius:30px;
+font-weight:700;
+text-align:center;
+}
+
+.back{
+display:inline-block;
+margin-top:50px;
+color:#e2a03f;
+text-decoration:none;
+font-weight:600;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#94a1b8;
+}
+
+h1,h2,nav a,.btn{
+font-family:'JetBrains Mono',monospace;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="index.html#projects">Projects</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+
+<main>
+
+<section class="hero">
+
+<h1>Machine Learning Portfolio</h1>
+
+<p>
+A collection of machine learning and deep learning projects demonstrating
+data preprocessing, feature engineering, model evaluation, and neural
+network development using Python, TensorFlow, and Scikit-learn.
+</p>
+
+</section>
+
+<div class="projects">
+
+<div class="card">
+
+<span class="tag">Featured Project</span>
+
+<div class="card">
+
+<h2>🏡 Housing Price Prediction</h2>
+
+<p>
+Compared multiple regression algorithms to predict house prices using the Ames Housing dataset.
+</p>
+
+<div class="metric">
+Best R²: <strong>0.885</strong>
+</div>
+
+<div class="tech">
+Python • Pandas • Scikit-learn
+</div>
+
+<a class="btn" href="ai-ml/case-housing.html">
+View Case Study →
+</a>
+
+</div>
+
+<div class="card">
+
+<h2>🚢 Titanic Survival Prediction</h2>
+
+<p>
+Built and compared classification models to predict passenger survival.
+</p>
+
+<div class="metric">
+Best Accuracy: <strong>82%</strong>
+</div>
+
+<div class="tech">
+Python • Pandas • Scikit-learn
+</div>
+
+<a class="btn" href="ai-ml/case-titanic.html">
+View Case Study →
+</a>
+
+</div>
+
+<div class="card">
+
+<h2>🔢 MNIST Digit Classification</h2>
+
+<p>
+Trained and optimized a neural network to recognize handwritten digits.
+</p>
+
+<div class="metric">
+Best Test Accuracy: <strong>89.7%</strong>
+</div>
+
+<div class="tech">
+TensorFlow • Keras • NumPy
+</div>
+
+<a class="btn" href="ai-ml/case-mnist.html">
+View Case Study →
+</a>
+
+</div>
+
+<div class="card">
+
+<h2>👕 Fashion MNIST</h2>
+
+<p>
+Compared deep learning training strategies to classify clothing images.
+</p>
+
+<div class="metric">
+Best Test Accuracy: <strong>89.7%</strong>
+</div>
+
+<div class="tech">
+TensorFlow • Keras • NumPy
+</div>
+
+<a class="btn" href="ai-ml/case-fashion.html">
+View Case Study →
+</a>
+
+</div>
+
+</div>
+
+<a class="back" href="index.html#projects">
+← Back to Portfolio
+</a>
+
+</main>
+
+<footer>
+© 2026 Zeina Farghaly
+</footer>
+
+</body>
+</html>
