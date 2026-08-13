@@ -1,153 +1,342 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MNIST Digit Classification | Zeina Farghaly</title>
-<meta name="description" content="Case study: a neural network trained to classify handwritten digits from the MNIST dataset, reaching 97.9% test accuracy.">
-<link rel="canonical" href="https://portfolio-tan-psi-79.vercel.app/ai-ml/case-mnist.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MNIST Digit Classification | Zeina Farghaly">
-<meta property="og:description" content="Case study: a neural network trained to classify handwritten digits from the MNIST dataset, reaching 97.9% test accuracy.">
-<meta property="og:url" content="https://portfolio-tan-psi-79.vercel.app/ai-ml/case-mnist.html">
-<meta property="og:image" content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="MNIST Digit Classification | Zeina Farghaly">
-<meta name="twitter:description" content="Case study: a neural network trained to classify handwritten digits from the MNIST dataset, reaching 97.9% test accuracy.">
-<meta name="twitter:image" content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png">
-<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
-<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MNIST Digit Classification | Zeina Farghaly</title>
+    <meta
+      name="description"
+      content="Case study: a neural network trained to classify handwritten digits from the MNIST dataset, reaching 97.9% test accuracy."
+    />
+    <link
+      rel="canonical"
+      href="https://portfolio-tan-psi-79.vercel.app/ai-ml/case-mnist.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="MNIST Digit Classification | Zeina Farghaly"
+    />
+    <meta
+      property="og:description"
+      content="Case study: a neural network trained to classify handwritten digits from the MNIST dataset, reaching 97.9% test accuracy."
+    />
+    <meta
+      property="og:url"
+      content="https://portfolio-tan-psi-79.vercel.app/ai-ml/case-mnist.html"
+    />
+    <meta
+      property="og:image"
+      content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="MNIST Digit Classification | Zeina Farghaly"
+    />
+    <meta
+      name="twitter:description"
+      content="Case study: a neural network trained to classify handwritten digits from the MNIST dataset, reaching 97.9% test accuracy."
+    />
+    <meta
+      name="twitter:image"
+      content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png"
+    />
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon-32.png"
+    />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
 
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#070b14;color:#eef0f3;line-height:1.7}
-nav{display:flex;justify-content:center;gap:28px;padding:18px;background:#0d1524;border-bottom:1px solid #131c30}
-nav a{color:#94a1b8;text-decoration:none;font-weight:600}
-nav a:hover{color:#e2a03f}
-main{max-width:1000px;margin:auto;padding:50px 24px}
-.hero{text-align:center;margin-bottom:40px}
-h1{font-size:44px;color:#e2a03f}
-h2{color:#e2a03f;margin:35px 0 15px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#131c30;padding:20px;border-radius:14px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;margin:25px 0}
-.stat{background:#131c30;padding:18px;border-radius:14px;text-align:center}
-.stat h3{color:#e2a03f;font-size:32px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.gallery img{width:100%;height:auto;border-radius:10px;border:1px solid #1f2b45}
-.btn{display:inline-block;margin-top:24px;padding:12px 24px;background:#e2a03f;color:#eef0f3;text-decoration:none;border-radius:30px}
-ul{padding-left:20px}
-footer{text-align:center;padding:35px;color:#94a1b8}
-h1,h2,nav a,.stat h3,.btn{font-family:'JetBrains Mono',monospace}
-</style>
-</head>
-<body>
-<nav>
-<a href="../index.html">Home</a>
-<a href="../index.html#projects">Projects</a>
-</nav>
-<main>
-<div class="hero">
-<h1>MNIST Digit Classification</h1>
-<p>Deep Learning Case Study</p>
-<p>
-Designed, trained, and optimized a deep learning model to classify handwritten digits from the MNIST dataset using TensorFlow and Keras. Explored multiple network architectures, callbacks, and optimization techniques, achieving <strong>97.9% test accuracy</strong>.
-</p>
-<a class="btn" href="../index.html#projects">← Back to Portfolio</a>
-</div>
- 
-<div class="stats">
-<div class="stat"><h3>60K</h3><p>Training Images</p></div>
-<div class="stat"><h3>10K</h3><p>Testing Images</p></div>
-<div class="stat"><h3>10</h3><p>Classes</p></div>
-<div class="stat"><h3>97.9%</h3><p>Test Accuracy</p></div>
-</div>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+      body {
+        background: #070b14;
+        color: #070b14;
+        line-height: 1.7;
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        padding: 18px;
+        background: #0d1524;
+        border-bottom: 1px solid #131c30;
+      }
+      nav a {
+        color: #94a1b8;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      nav a:hover {
+        color: #e2a03f;
+      }
+      main {
+        max-width: 1000px;
+        margin: auto;
+        padding: 50px 24px;
+      }
+      .hero {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      h1 {
+        font-size: 44px;
+        color: #e2a03f;
+      }
+      h2 {
+        color: #e2a03f;
+        margin: 35px 0 15px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+      }
+      .card {
+        background: #131c30;
+        padding: 20px;
+        border-radius: 14px;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 18px;
+        margin: 25px 0;
+      }
+      .stat {
+        background: #131c30;
+        padding: 18px;
+        border-radius: 14px;
+        text-align: center;
+      }
+      .stat h3 {
+        color: #e2a03f;
+        font-size: 32px;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 18px;
+      }
+      .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        border: 1px solid #1f2b45;
+      }
+      .btn {
+        display: inline-block;
+        margin-top: 24px;
+        padding: 12px 24px;
+        background: #e2a03f;
+        color: #070b14;
+        text-decoration: none;
+        border-radius: 30px;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      footer {
+        text-align: center;
+        padding: 35px;
+        color: #94a1b8;
+      }
+      h1,
+      h2,
+      nav a,
+      .stat h3,
+      .btn {
+        font-family: "JetBrains Mono", monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#projects">Projects</a>
+    </nav>
+    <main>
+      <div class="hero">
+        <h1>MNIST Digit Classification</h1>
+        <p>Deep Learning Case Study</p>
+        <p>
+          Designed, trained, and optimized a deep learning model to classify
+          handwritten digits from the MNIST dataset using TensorFlow and Keras.
+          Explored multiple network architectures, callbacks, and optimization
+          techniques, achieving <strong>97.9% test accuracy</strong>.
+        </p>
+        <a class="btn" href="../index.html#projects">← Back to Portfolio</a>
+      </div>
 
- <h2>Project Highlights</h2>
+      <div class="stats">
+        <div class="stat">
+          <h3>60K</h3>
+          <p>Training Images</p>
+        </div>
+        <div class="stat">
+          <h3>10K</h3>
+          <p>Testing Images</p>
+        </div>
+        <div class="stat">
+          <h3>10</h3>
+          <p>Classes</p>
+        </div>
+        <div class="stat">
+          <h3>97.9%</h3>
+          <p>Test Accuracy</p>
+        </div>
+      </div>
 
-<div class="grid">
+      <h2>Project Highlights</h2>
 
-<div class="card">
-<h3>97.9%</h3>
-<p>Final test accuracy achieved using a fully connected neural network.</p>
-</div>
+      <div class="grid">
+        <div class="card">
+          <h3>97.9%</h3>
+          <p>
+            Final test accuracy achieved using a fully connected neural network.
+          </p>
+        </div>
 
-<div class="card">
-<h3>60,000</h3>
-<p>Training images used to build and evaluate the model.</p>
-</div>
+        <div class="card">
+          <h3>60,000</h3>
+          <p>Training images used to build and evaluate the model.</p>
+        </div>
 
-<div class="card">
-<h3>TensorFlow</h3>
-<p>Implemented using TensorFlow, Keras, and NumPy.</p>
-</div>
+        <div class="card">
+          <h3>TensorFlow</h3>
+          <p>Implemented using TensorFlow, Keras, and NumPy.</p>
+        </div>
+      </div>
 
-</div>
- 
-<h2>Project Overview</h2>
-<p>This project uses the MNIST handwritten digit dataset to train a fully connected neural network. The goal was to explore the complete deep learning workflow, including preprocessing, model design, training, evaluation, and hyperparameter tuning.</p>
- 
-<h2>Technologies</h2>
-<div class="grid">
-<div class="card">Python</div>
-<div class="card">TensorFlow</div>
-<div class="card">Keras</div>
-<div class="card">NumPy</div>
-<div class="card">Matplotlib</div>
- <div class="card">scikit-learn</div>
-</div>
- 
-<h2>Workflow</h2>
-<div class="grid">
-<div class="card"><h3>Preprocessing</h3><ul><li>Normalized pixel values</li><li>Flattened 28×28 images</li><li>One-hot encoded labels</li></ul></div>
-<div class="card"><h3>Model</h3><ul><li>Dense (256) + ReLU</li><li>Dense (128) + ReLU</li><li>Softmax output layer</li></ul></div>
-<div class="card"><h3>Training</h3><ul><li>Adam optimizer</li><li>EarlyStopping</li><li>ModelCheckpoint</li><li>Validation split</li></ul></div>
-</div>
- 
-<h2>Results</h2>
-<p>
-The final neural network achieved <strong>97.9% test accuracy</strong> with a
-<strong>test loss of 0.077</strong>. Performance improvements came from
-systematically experimenting with network architecture, optimizer settings,
-validation monitoring, and callbacks such as EarlyStopping and
-ModelCheckpoint, resulting in a model that generalized well to unseen data.
-</p>
- 
-<h2>Project Gallery</h2>
-<div class="gallery">
-<img loading="lazy" src="../assets/mnist-training.png" alt="Training vs validation accuracy and loss over 5 epochs">
-<img loading="lazy" src="../assets/mnist-confusion.png" alt="Confusion matrix across all 10 digit classes">
-<img loading="lazy" src="../assets/mnist-predictions.png" alt="Sample misclassified digits with true vs predicted labels">
-</div>
- 
-<h2>Lessons Learned</h2>
-<ul>
-<li>Data preprocessing is critical for neural network performance.</li>
-<li>EarlyStopping helps prevent overfitting.</li>
-<li>ModelCheckpoint preserves the best-performing model.</li>
-<li>Hyperparameter tuning improves model generalization.</li>
-</ul>
+      <h2>Project Overview</h2>
+      <p>
+        This project uses the MNIST handwritten digit dataset to train a fully
+        connected neural network. The goal was to explore the complete deep
+        learning workflow, including preprocessing, model design, training,
+        evaluation, and hyperparameter tuning.
+      </p>
 
- <h2>Key Achievements</h2>
+      <h2>Technologies</h2>
+      <div class="grid">
+        <div class="card">Python</div>
+        <div class="card">TensorFlow</div>
+        <div class="card">Keras</div>
+        <div class="card">NumPy</div>
+        <div class="card">Matplotlib</div>
+        <div class="card">scikit-learn</div>
+      </div>
 
-<ul>
-<li>Built and optimized a fully connected neural network for handwritten digit recognition.</li>
-<li>Achieved <strong>97.9% test accuracy</strong> on the MNIST test dataset.</li>
-<li>Applied preprocessing, one-hot encoding, model evaluation, and hyperparameter tuning.</li>
-<li>Used EarlyStopping and ModelCheckpoint to improve model generalization.</li>
-</ul>
- 
-<h2>Future Improvements</h2>
-<ul>
-<li>Convolutional Neural Networks (CNNs)</li>
-<li>Data augmentation</li>
-<li>Learning rate scheduling</li>
-<li>More architecture experiments</li>
-</ul>
- 
-<a class="btn" href="../index.html#projects">← Return to Portfolio</a>
-</main>
-<footer>© 2026 Zeina Farghaly</footer>
-</body></html>
+      <h2>Workflow</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Preprocessing</h3>
+          <ul>
+            <li>Normalized pixel values</li>
+            <li>Flattened 28×28 images</li>
+            <li>One-hot encoded labels</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Model</h3>
+          <ul>
+            <li>Dense (256) + ReLU</li>
+            <li>Dense (128) + ReLU</li>
+            <li>Softmax output layer</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Training</h3>
+          <ul>
+            <li>Adam optimizer</li>
+            <li>EarlyStopping</li>
+            <li>ModelCheckpoint</li>
+            <li>Validation split</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Results</h2>
+      <p>
+        The final neural network achieved
+        <strong>97.9% test accuracy</strong> with a
+        <strong>test loss of 0.077</strong>. Performance improvements came from
+        systematically experimenting with network architecture, optimizer
+        settings, validation monitoring, and callbacks such as EarlyStopping and
+        ModelCheckpoint, resulting in a model that generalized well to unseen
+        data.
+      </p>
+
+      <h2>Project Gallery</h2>
+      <div class="gallery">
+        <img
+          loading="lazy"
+          src="../assets/mnist-training.png"
+          alt="Training vs validation accuracy and loss over 5 epochs"
+        />
+        <img
+          loading="lazy"
+          src="../assets/mnist-confusion.png"
+          alt="Confusion matrix across all 10 digit classes"
+        />
+        <img
+          loading="lazy"
+          src="../assets/mnist-predictions.png"
+          alt="Sample misclassified digits with true vs predicted labels"
+        />
+      </div>
+
+      <h2>Lessons Learned</h2>
+      <ul>
+        <li>Data preprocessing is critical for neural network performance.</li>
+        <li>EarlyStopping helps prevent overfitting.</li>
+        <li>ModelCheckpoint preserves the best-performing model.</li>
+        <li>Hyperparameter tuning improves model generalization.</li>
+      </ul>
+
+      <h2>Key Achievements</h2>
+
+      <ul>
+        <li>
+          Built and optimized a fully connected neural network for handwritten
+          digit recognition.
+        </li>
+        <li>
+          Achieved <strong>97.9% test accuracy</strong> on the MNIST test
+          dataset.
+        </li>
+        <li>
+          Applied preprocessing, one-hot encoding, model evaluation, and
+          hyperparameter tuning.
+        </li>
+        <li>
+          Used EarlyStopping and ModelCheckpoint to improve model
+          generalization.
+        </li>
+      </ul>
+
+      <h2>Future Improvements</h2>
+      <ul>
+        <li>Convolutional Neural Networks (CNNs)</li>
+        <li>Data augmentation</li>
+        <li>Learning rate scheduling</li>
+        <li>More architecture experiments</li>
+      </ul>
+
+      <a class="btn" href="../index.html#projects">← Return to Portfolio</a>
+    </main>
+    <footer>© 2026 Zeina Farghaly</footer>
+  </body>
+</html>
