@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-tan-psi-79.vercel.app/sitemap.xml
