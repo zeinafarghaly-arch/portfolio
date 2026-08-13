@@ -4,6 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zeina Farghaly | AI & Machine Learning</title>
+<meta name="description" content="Zeina Farghaly is an AI/ML engineer and Computer Engineering student building deployed machine learning projects, an ML research capstone (FlyRank), and cybersecurity work.">
+<link rel="canonical" href="https://portfolio-tan-psi-79.vercel.app/">
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zeina Farghaly | AI & Machine Learning">
+<meta property="og:description" content="AI/ML engineer and Computer Engineering student — deployed ML projects, an ML research capstone (FlyRank), and cybersecurity work.">
+<meta property="og:url" content="https://portfolio-tan-psi-79.vercel.app/">
+<meta property="og:image" content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zeina Farghaly | AI & Machine Learning">
+<meta name="twitter:description" content="AI/ML engineer and Computer Engineering student — deployed ML projects, an ML research capstone (FlyRank), and cybersecurity work.">
+<meta name="twitter:image" content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png">
+
+
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -367,7 +389,7 @@ B.Sc. Computer Engineering
 Have a question, project idea, or just want to get in touch? Send me a message below.
 </p>
 
-<form action="https://formspree.io/f/mjybwepq" method="POST">
+<form action="https://formspree.io/f/mjybwepq" method="POST" id="contact-form">
 
 <label for="name">Name</label>
 <br>
@@ -384,11 +406,18 @@ Have a question, project idea, or just want to get in touch? Send me a message b
 <textarea id="message" name="message" rows="6" required></textarea>
 <br><br>
 
-<button type="submit">
+<button type="submit" id="contact-submit-btn">
 Send Message
 </button>
 
 </form>
+<script>
+document.getElementById('contact-form').addEventListener('submit', function () {
+  var btn = document.getElementById('contact-submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+});
+</script>
 
 <p style="margin-top:30px;">
 📧 <a href="mailto:zeinafarghaly@gmail.com">zeinafarghaly@gmail.com</a>
