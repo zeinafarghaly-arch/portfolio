@@ -4,6 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FlyRank ML Internship — Content Refresh Prioritization | Zeina Farghaly</title>
+<meta name="description" content="Case study: a deployed ML research capstone that scores content refresh priority, beating a rule-based baseline (Precision@500 0.528 vs 0.490).">
+<link rel="canonical" href="https://portfolio-tan-psi-79.vercel.app/case-flyrank.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FlyRank ML Internship — Content Refresh Prioritization | Zeina Farghaly">
+<meta property="og:description" content="Case study: a deployed ML research capstone that scores content refresh priority, beating a rule-based baseline (Precision@500 0.528 vs 0.490).">
+<meta property="og:url" content="https://portfolio-tan-psi-79.vercel.app/case-flyrank.html">
+<meta property="og:image" content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FlyRank ML Internship — Content Refresh Prioritization | Zeina Farghaly">
+<meta name="twitter:description" content="Case study: a deployed ML research capstone that scores content refresh priority, beating a rule-based baseline (Precision@500 0.528 vs 0.490).">
+<meta name="twitter:image" content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
  
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
  
@@ -185,6 +200,9 @@ Content Refresh Prioritization • Applied Search Intelligence
 <p>
 Designed and deployed a machine learning ranking model to prioritize content refresh opportunities using 9.8 million rows of anonymized production search data. Built an end-to-end pipeline including data validation, leakage detection, feature engineering, model evaluation, and an AI-powered explanation agent that outperformed a hand-crafted baseline.
 </p>
+<a class="button" href="https://zeinafarghaly-arch.github.io/ML-flyrank/" target="_blank">
+Read the full research paper →
+</a>
 <a class="button" href="index.html#projects">
 ← Back to Portfolio
 </a>
@@ -273,7 +291,7 @@ To prove the feature set was actually clean (not just claimed clean), I delibera
 </p>
  
 <div class="gallery">
-<img src="assets/flyrank-leakage.png" alt="Bar chart: honest AUC 0.598 using 5 real features vs leaky AUC 1.000 when the label's source column is included">
+<img loading="lazy" src="assets/flyrank-leakage.png" width="780" height="650" alt="Bar chart: honest AUC 0.598 using 5 real features vs leaky AUC 1.000 when the label's source column is included">
 </div>
  
 <p style="margin-top:16px">
@@ -287,7 +305,7 @@ For the final scoring model I used Logistic Regression — interpretable, fast, 
 </p>
  
 <div class="gallery">
-<img src="assets/flyrank-precision.png" alt="Bar chart: Precision at 500 for baseline rule (0.490) vs Logistic Regression (0.528)">
+<img loading="lazy" src="assets/flyrank-precision.png" width="780" height="650" alt="Bar chart: Precision at 500 for baseline rule (0.490) vs Logistic Regression (0.528)">
 </div>
  
 <p style="margin-top:16px">
