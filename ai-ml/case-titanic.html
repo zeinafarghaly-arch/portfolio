@@ -1,169 +1,353 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Titanic Survival Prediction | Zeina Farghaly</title>
-<meta name="description" content="Case study: predicting Titanic passenger survival using classification models and feature engineering.">
-<link rel="canonical" href="https://portfolio-tan-psi-79.vercel.app/ai-ml/case-titanic.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Titanic Survival Prediction | Zeina Farghaly">
-<meta property="og:description" content="Case study: predicting Titanic passenger survival using classification models and feature engineering.">
-<meta property="og:url" content="https://portfolio-tan-psi-79.vercel.app/ai-ml/case-titanic.html">
-<meta property="og:image" content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Titanic Survival Prediction | Zeina Farghaly">
-<meta name="twitter:description" content="Case study: predicting Titanic passenger survival using classification models and feature engineering.">
-<meta name="twitter:image" content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png">
-<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
-<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Titanic Survival Prediction | Zeina Farghaly</title>
+    <meta
+      name="description"
+      content="Case study: predicting Titanic passenger survival using classification models and feature engineering."
+    />
+    <link
+      rel="canonical"
+      href="https://portfolio-tan-psi-79.vercel.app/ai-ml/case-titanic.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Titanic Survival Prediction | Zeina Farghaly"
+    />
+    <meta
+      property="og:description"
+      content="Case study: predicting Titanic passenger survival using classification models and feature engineering."
+    />
+    <meta
+      property="og:url"
+      content="https://portfolio-tan-psi-79.vercel.app/ai-ml/case-titanic.html"
+    />
+    <meta
+      property="og:image"
+      content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Titanic Survival Prediction | Zeina Farghaly"
+    />
+    <meta
+      name="twitter:description"
+      content="Case study: predicting Titanic passenger survival using classification models and feature engineering."
+    />
+    <meta
+      name="twitter:image"
+      content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png"
+    />
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon-32.png"
+    />
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
 
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#070b14;color:#eef0f3;line-height:1.7}
-nav{position:sticky;top:0;background:#0d1524;padding:18px;display:flex;justify-content:center;gap:28px;border-bottom:1px solid #131c30}
-nav a{color:#94a1b8;text-decoration:none;font-weight:600}
-nav a:hover{color:#e2a03f}
-main{max-width:1000px;margin:auto;padding:50px 25px}
-h1{color:#e2a03f;font-size:44px}
-h2{color:#e2a03f;margin:40px 0 15px}
-p{color:#94a1b8}
-.hero{text-align:center;padding:30px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#131c30;padding:20px;border-radius:14px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px;margin:25px 0}
-.stat{background:#131c30;padding:20px;border-radius:14px;text-align:center}
-.stat h3{font-size:34px;color:#e2a03f}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.gallery img{width:100%;height:auto;border-radius:12px;border:1px solid #1f2b45}
-.btn{display:inline-block;background:#e2a03f;color:white;padding:12px 24px;border-radius:30px;text-decoration:none;margin-top:20px}
-ul{padding-left:20px}
-footer{text-align:center;color:#94a1b8;padding:40px}
-h1,h2,nav a,.stat h3,.btn{font-family:'JetBrains Mono',monospace}
-</style>
-</head>
-<body>
-<nav>
-<a href="../index.html">Home</a>
-<a href="../index.html#projects">Projects</a>
-</nav>
- 
-<main>
-<section class="hero">
-<h1>Titanic Survival Prediction</h1>
-<p>Machine Learning Classification Case Study</p>
-<p>
-Developed and evaluated multiple machine learning classification models to predict passenger survival on the Titanic dataset. Applied data preprocessing, exploratory data analysis, feature engineering, and model comparison, achieving <strong>82% accuracy</strong> with a Support Vector Machine.
-</p>
-<a class="btn" href="../index.html#projects">← Back to Portfolio</a>
-</section>
- 
-<div class="stats">
-<div class="stat"><h3>891</h3><p>Passengers</p></div>
-<div class="stat"><h3>3</h3><p>Models Compared</p></div>
-<div class="stat"><h3>82%</h3><p>Best Accuracy</p></div>
-<div class="stat"><h3>SVM</h3><p>Best Model</p></div>
-</div>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+      body {
+        background: #070b14;
+        color: #eef0f3;
+        line-height: 1.7;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        background: #0d1524;
+        padding: 18px;
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        border-bottom: 1px solid #131c30;
+      }
+      nav a {
+        color: #94a1b8;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      nav a:hover {
+        color: #e2a03f;
+      }
+      main {
+        max-width: 1000px;
+        margin: auto;
+        padding: 50px 25px;
+      }
+      h1 {
+        color: #e2a03f;
+        font-size: 44px;
+      }
+      h2 {
+        color: #e2a03f;
+        margin: 40px 0 15px;
+      }
+      p {
+        color: #94a1b8;
+      }
+      .hero {
+        text-align: center;
+        padding: 30px 0;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+      }
+      .card {
+        background: #131c30;
+        padding: 20px;
+        border-radius: 14px;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 18px;
+        margin: 25px 0;
+      }
+      .stat {
+        background: #131c30;
+        padding: 20px;
+        border-radius: 14px;
+        text-align: center;
+      }
+      .stat h3 {
+        font-size: 34px;
+        color: #e2a03f;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 18px;
+      }
+      .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        border: 1px solid #1f2b45;
+      }
+      .btn {
+        display: inline-block;
+        background: #e2a03f;
+        color: #070b14;
+        padding: 12px 24px;
+        border-radius: 30px;
+        text-decoration: none;
+        margin-top: 20px;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      footer {
+        text-align: center;
+        color: #94a1b8;
+        padding: 40px;
+      }
+      h1,
+      h2,
+      nav a,
+      .stat h3,
+      .btn {
+        font-family: "JetBrains Mono", monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#projects">Projects</a>
+    </nav>
 
- <h2>Project Highlights</h2>
+    <main>
+      <section class="hero">
+        <h1>Titanic Survival Prediction</h1>
+        <p>Machine Learning Classification Case Study</p>
+        <p>
+          Developed and evaluated multiple machine learning classification
+          models to predict passenger survival on the Titanic dataset. Applied
+          data preprocessing, exploratory data analysis, feature engineering,
+          and model comparison, achieving <strong>82% accuracy</strong> with a
+          Support Vector Machine.
+        </p>
+        <a class="btn" href="../index.html#projects">← Back to Portfolio</a>
+      </section>
 
-<div class="grid">
+      <div class="stats">
+        <div class="stat">
+          <h3>891</h3>
+          <p>Passengers</p>
+        </div>
+        <div class="stat">
+          <h3>3</h3>
+          <p>Models Compared</p>
+        </div>
+        <div class="stat">
+          <h3>82%</h3>
+          <p>Best Accuracy</p>
+        </div>
+        <div class="stat">
+          <h3>SVM</h3>
+          <p>Best Model</p>
+        </div>
+      </div>
 
-<div class="card">
-<h3>Best Model</h3>
-<p>Support Vector Machine achieved the highest accuracy of <strong>82%</strong>.</p>
-</div>
+      <h2>Project Highlights</h2>
 
-<div class="card">
-<h3>Feature Engineering</h3>
-<p>Cleaned missing values, encoded categorical variables, and prepared the dataset for training.</p>
-</div>
+      <div class="grid">
+        <div class="card">
+          <h3>Best Model</h3>
+          <p>
+            Support Vector Machine achieved the highest accuracy of
+            <strong>82%</strong>.
+          </p>
+        </div>
 
-<div class="card">
-<h3>Model Comparison</h3>
-<p>Compared Logistic Regression, KNN, and SVM to evaluate classification performance.</p>
-</div>
+        <div class="card">
+          <h3>Feature Engineering</h3>
+          <p>
+            Cleaned missing values, encoded categorical variables, and prepared
+            the dataset for training.
+          </p>
+        </div>
 
-</div>
- 
-<h2>Project Overview</h2>
-<p>
-This project explores the complete machine learning pipeline using the Titanic dataset. After cleaning and preprocessing the data, I performed exploratory data analysis, engineered predictive features, trained multiple classification models, and compared their performance using accuracy and confusion matrices to identify the best-performing approach.
-</p>
- 
-<h2>Technologies</h2>
-<div class="grid">
-<div class="card">Python</div>
-<div class="card">Pandas</div>
-<div class="card">NumPy</div>
-<div class="card">Scikit-learn</div>
-<div class="card">Matplotlib</div>
-<div class="card">Seaborn</div>
-</div>
- 
-<h2>Workflow</h2>
-<div class="grid">
-<div class="card">
-<h3>1. Data Cleaning</h3>
-<ul>
-<li>Handled missing values</li>
-<li>Removed unused features</li>
-<li>Prepared categorical variables</li>
-</ul>
-</div>
-<div class="card">
-<h3>2. Exploratory Data Analysis</h3>
-<ul>
-<li>Survival by gender</li>
-<li>Passenger class analysis</li>
-<li>Age and fare distributions</li>
-</ul>
-</div>
-<div class="card">
-<h3>3. Model Training</h3>
-<ul>
-<li>Logistic Regression</li>
-<li>K-Nearest Neighbors</li>
-<li>Support Vector Machine</li>
-</ul>
-</div>
-</div>
- 
-<h2>Model Comparison</h2>
-<div class="grid">
-<div class="card"><strong>Logistic Regression</strong><br>Accuracy: 63%</div>
-<div class="card"><strong>KNN</strong><br>Accuracy: 80%</div>
-<div class="card"><strong>Support Vector Machine ⭐</strong><br>Accuracy: <strong>82%</strong></div>
-</div>
- 
-<h2>Project Gallery</h2>
-<div class="gallery">
-<img loading="lazy" src="../assets/titanic_1.png" alt="Confusion Matrix Logistic">
-  <img loading="lazy" src="../assets/titanic_2.png" alt="Confusion Matrix SVM">
-  <img loading="lazy" src="../assets/titanic_3.png" alt="Confusion Matrix KNN">
-</div>
- 
-<h2>Lessons Learned</h2>
+        <div class="card">
+          <h3>Model Comparison</h3>
+          <p>
+            Compared Logistic Regression, KNN, and SVM to evaluate
+            classification performance.
+          </p>
+        </div>
+      </div>
 
-<ul>
-<li>Real-world datasets require significant preprocessing before model training.</li>
-<li>Feature engineering can have a major impact on classification performance.</li>
-<li>Comparing multiple algorithms is essential for selecting the best model.</li>
-<li>Confusion matrices provide deeper insight into model behavior than accuracy alone.</li>
-</ul>
- <h2>Future Improvements</h2>
-<ul>
-<li>Evaluate ensemble methods such as Random Forest and XGBoost.</li>
-<li>Use cross-validation for more reliable model evaluation.</li>
-<li>Apply GridSearchCV to optimize model hyperparameters.</li>
-<li>Explore additional feature engineering techniques to improve predictive performance.</li>
-</ul>
- 
-<a class="btn" href="../index.html#projects">← Return to Portfolio</a>
-</main>
- 
-<footer>© 2026 Zeina Farghaly</footer>
-</body>
+      <h2>Project Overview</h2>
+      <p>
+        This project explores the complete machine learning pipeline using the
+        Titanic dataset. After cleaning and preprocessing the data, I performed
+        exploratory data analysis, engineered predictive features, trained
+        multiple classification models, and compared their performance using
+        accuracy and confusion matrices to identify the best-performing
+        approach.
+      </p>
+
+      <h2>Technologies</h2>
+      <div class="grid">
+        <div class="card">Python</div>
+        <div class="card">Pandas</div>
+        <div class="card">NumPy</div>
+        <div class="card">Scikit-learn</div>
+        <div class="card">Matplotlib</div>
+        <div class="card">Seaborn</div>
+      </div>
+
+      <h2>Workflow</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>1. Data Cleaning</h3>
+          <ul>
+            <li>Handled missing values</li>
+            <li>Removed unused features</li>
+            <li>Prepared categorical variables</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>2. Exploratory Data Analysis</h3>
+          <ul>
+            <li>Survival by gender</li>
+            <li>Passenger class analysis</li>
+            <li>Age and fare distributions</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>3. Model Training</h3>
+          <ul>
+            <li>Logistic Regression</li>
+            <li>K-Nearest Neighbors</li>
+            <li>Support Vector Machine</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Model Comparison</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Logistic Regression</strong><br />Accuracy: 63%
+        </div>
+        <div class="card"><strong>KNN</strong><br />Accuracy: 80%</div>
+        <div class="card">
+          <strong>Support Vector Machine ⭐</strong><br />Accuracy:
+          <strong>82%</strong>
+        </div>
+      </div>
+
+      <h2>Project Gallery</h2>
+      <div class="gallery">
+        <img
+          loading="lazy"
+          src="../assets/titanic_1.png"
+          alt="Confusion Matrix Logistic"
+        />
+        <img
+          loading="lazy"
+          src="../assets/titanic_2.png"
+          alt="Confusion Matrix SVM"
+        />
+        <img
+          loading="lazy"
+          src="../assets/titanic_3.png"
+          alt="Confusion Matrix KNN"
+        />
+      </div>
+
+      <h2>Lessons Learned</h2>
+
+      <ul>
+        <li>
+          Real-world datasets require significant preprocessing before model
+          training.
+        </li>
+        <li>
+          Feature engineering can have a major impact on classification
+          performance.
+        </li>
+        <li>
+          Comparing multiple algorithms is essential for selecting the best
+          model.
+        </li>
+        <li>
+          Confusion matrices provide deeper insight into model behavior than
+          accuracy alone.
+        </li>
+      </ul>
+      <h2>Future Improvements</h2>
+      <ul>
+        <li>Evaluate ensemble methods such as Random Forest and XGBoost.</li>
+        <li>Use cross-validation for more reliable model evaluation.</li>
+        <li>Apply GridSearchCV to optimize model hyperparameters.</li>
+        <li>
+          Explore additional feature engineering techniques to improve
+          predictive performance.
+        </li>
+      </ul>
+
+      <a class="btn" href="../index.html#projects">← Return to Portfolio</a>
+    </main>
+
+    <footer>© 2026 Zeina Farghaly</footer>
+  </body>
 </html>
