@@ -5,187 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FlyRank ML Internship — Content Refresh Prioritization | Zeina Farghaly</title>
 <meta name="description" content="Case study: a deployed ML research capstone that scores content refresh priority, beating a rule-based baseline (Precision@500 0.528 vs 0.490).">
-<link rel="canonical" href="https://portfolio-tan-psi-79.vercel.app/case-flyrank.html">
+<link rel="canonical" href="https://zeina-farghaly.vercel.app/case-flyrank.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="FlyRank ML Internship — Content Refresh Prioritization | Zeina Farghaly">
 <meta property="og:description" content="Case study: a deployed ML research capstone that scores content refresh priority, beating a rule-based baseline (Precision@500 0.528 vs 0.490).">
-<meta property="og:url" content="https://portfolio-tan-psi-79.vercel.app/case-flyrank.html">
-<meta property="og:image" content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png">
+<meta property="og:url" content="https://zeina-farghaly.vercel.app/case-flyrank.html">
+<meta property="og:image" content="https://zeina-farghaly.vercel.app/assets/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="FlyRank ML Internship — Content Refresh Prioritization | Zeina Farghaly">
 <meta name="twitter:description" content="Case study: a deployed ML research capstone that scores content refresh priority, beating a rule-based baseline (Precision@500 0.528 vs 0.490).">
-<meta name="twitter:image" content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png">
+<meta name="twitter:image" content="https://zeina-farghaly.vercel.app/assets/social-preview.png">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-
+ 
  
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
  
-<style>
- 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
- 
-body{
-background:#070b14;
-color:white;
-line-height:1.7;
-}
- 
-nav{
-display:flex;
-justify-content:center;
-gap:30px;
-padding:18px;
-background:#0d1524;
-border-bottom:1px solid #131c30;
-}
- 
-nav a{
-color:#94a1b8;
-text-decoration:none;
-font-weight:600;
-}
- 
-nav a:hover{
-color:#e2a03f;
-}
- 
-main{
-max-width:1000px;
-margin:auto;
-padding:50px 30px;
-}
- 
-.hero{
-text-align:center;
-margin-bottom:40px;
-}
- 
-.hero h1{
-font-size:42px;
-color:#e2a03f;
-}
- 
-.hero p{
-margin-top:15px;
-color:#94a1b8;
-}
- 
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
-margin:35px 0;
-}
- 
-.stat{
-background:#131c30;
-padding:20px;
-border-radius:15px;
-text-align:center;
-}
- 
-.stat h2{
-color:#e2a03f;
-font-size:28px;
-}
- 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:25px;
-}
- 
-.card{
-background:#131c30;
-padding:22px;
-border-radius:15px;
-}
- 
-.card h3{
-color:#e2a03f;
-margin-bottom:10px;
-font-family:'JetBrains Mono',monospace;
-font-size:15px;
-}
- 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:18px;
-margin-top:20px;
-}
- 
-.gallery img{
-width:100%;
-height:auto;
-border-radius:12px;
-border:1px solid #1f2b45;
-}
- 
-.button{
-display:inline-block;
-margin-top:30px;
-background:#e2a03f;
-padding:14px 26px;
-border-radius:30px;
-color:#070b14;
-text-decoration:none;
-font-weight:700;
-}
- 
-h2{
-color:#e2a03f;
-margin:35px 0 15px;
-}
- 
-ul{
-padding-left:20px;
-}
- 
-.note{
-background:#131c30;
-border-left:3px solid #e2a03f;
-padding:14px 18px;
-border-radius:6px;
-color:#94a1b8;
-font-size:14px;
-margin-top:16px;
-}
- 
-code{
-font-family:'JetBrains Mono',monospace;
-background:#131c30;
-padding:2px 6px;
-border-radius:4px;
-font-size:13px;
-color:#e2a03f;
-}
- 
-footer{
-text-align:center;
-padding:35px;
-color:#94a1b8;
-}
- 
-h1,h2,nav a,.stat h3,.btn{font-family:'JetBrains Mono',monospace}
- 
-</style>
+<link rel="stylesheet" href="styles.css">
  
 </head>
  
 <body>
  
 <nav>
-<a href="index.html">Home</a>
-<a href="index.html#projects">Projects</a>
+    <a href="index.html" class="logo">&lt;Z/&gt;</a>
+    <a href="index.html" class="link">Home</a>
+    <a href="index.html#projects" class="link">Projects</a>
 </nav>
  
 <main>
@@ -201,10 +47,10 @@ Content Refresh Prioritization • Applied Search Intelligence
 <p>
 Designed and deployed a machine learning ranking model to prioritize content refresh opportunities using 9.8 million rows of anonymized production search data. Built an end-to-end pipeline including data validation, leakage detection, feature engineering, model evaluation, and an AI-powered explanation agent that outperformed a hand-crafted baseline.
 </p>
-<a class="button" href="https://zeinafarghaly-arch.github.io/ML-flyrank/" target="_blank">
+<a class="btn" href="https://zeinafarghaly-arch.github.io/ML-flyrank/" target="_blank">
 Read the full research paper →
 </a>
-<a class="button" href="index.html#projects">
+<a class="btn" href="index.html#projects">
 ← Back to Portfolio
 </a>
  
@@ -234,24 +80,24 @@ Read the full research paper →
  
 </div>
  <h2>Project Highlights</h2>
-
+ 
 <div class="cards">
-
+ 
 <div class="card">
 <h3>Production Dataset</h3>
 <p>Processed 9.8 million rows across 55 anonymized clients using DuckDB.</p>
 </div>
-
+ 
 <div class="card">
 <h3>Leakage Detection</h3>
 <p>Identified and removed a data leakage feature that falsely increased model AUC from 0.598 to 1.000.</p>
 </div>
-
+ 
 <div class="card">
 <h3>Model Performance</h3>
 <p>Improved Precision@500 from <strong>0.490</strong> to <strong>0.528</strong> compared with the rule-based baseline.</p>
 </div>
-
+ 
 </div>
  
 <h2>The Decision</h2>
@@ -319,7 +165,7 @@ The model beat the Week 4 hand-written baseline rule on the held-out test set: <
 This case study is also the foundation for a shipped agent — a <strong>Content-Refresh Triage Agent</strong> that reuses this model's real feature set and feature weighting, with Claude reasoning over the score to explain each triage call in plain language.
 </p>
  
-<a class="button" href="https://portfolio-ytfzpjckqhpzz3fz3zv26t.streamlit.app/" target="_blank">
+<a class="btn" href="https://portfolio-ytfzpjckqhpzz3fz3zv26t.streamlit.app/" target="_blank">
 Try the live agent →
 </a>
  
@@ -349,7 +195,7 @@ Try the live agent →
 All data used is anonymized and provided under FlyRank's internship data-use terms — no client names, domains, or private queries appear anywhere in this project.
 </div>
  
-<a class="button" href="index.html#projects">
+<a class="btn" href="index.html#projects">
 ← Return to Portfolio
 </a>
  
