@@ -6,8 +6,8 @@
 <title>Zeina Farghaly | AI & Machine Learning</title>
 <meta name="description" content="Zeina Farghaly is an AI/ML engineer and Computer Engineering student building deployed machine learning projects, an ML research capstone (FlyRank), and cybersecurity work.">
 <link rel="canonical" href="https://zeina-farghaly.vercel.app/">
-
-
+ 
+ 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Zeina Farghaly | AI & Machine Learning">
 <meta property="og:description" content="AI/ML engineer and Computer Engineering student — deployed ML projects, an ML research capstone (FlyRank), and cybersecurity work.">
@@ -15,17 +15,17 @@
 <meta property="og:image" content="https://zeina-farghaly.vercel.app/assets/social-preview.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-
+ 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Zeina Farghaly | AI & Machine Learning">
 <meta name="twitter:description" content="AI/ML engineer and Computer Engineering student — deployed ML projects, an ML research capstone (FlyRank), and cybersecurity work.">
 <meta name="twitter:image" content="https://zeina-farghaly.vercel.app/assets/social-preview.png">
-
-
+ 
+ 
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-
+ 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -40,6 +40,13 @@
 --text-secondary:#94a1b8;
 --mono:'JetBrains Mono',monospace;
 --sans:'Inter',sans-serif;
+--space-1:8px;
+--space-2:16px;
+--space-3:24px;
+--space-4:32px;
+--space-5:40px;
+--space-8:64px;
+--space-10:80px;
 }
 *{
 margin:0;
@@ -63,7 +70,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 gap:30px;
-padding:16px 20px;
+padding:var(--space-2) var(--space-3);
 flex-wrap:wrap;
 }
 nav .logo{
@@ -93,7 +100,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:60px 20px;
+padding:var(--space-8) var(--space-3);
 }
 .hero h1{
 font-family:var(--mono);
@@ -106,7 +113,7 @@ letter-spacing:-.5px;
 color:var(--amber-500);
 }
 .hero h2{
-margin-top:12px;
+margin-top:var(--space-2);
 font-weight:400;
 color:var(--text-secondary);
 font-family:var(--mono);
@@ -115,18 +122,18 @@ letter-spacing:.5px;
 }
 .hero p{
 max-width:700px;
-margin:24px auto;
+margin:var(--space-3) auto;
 color:var(--text-secondary);
 }
 .buttons{
-margin-top:30px;
+margin-top:var(--space-4);
 }
 .buttons a{
 text-decoration:none;
 color:var(--navy-950);
-padding:14px 28px;
+padding:var(--space-2) var(--space-4);
 border-radius:6px;
-margin:10px;
+margin:var(--space-1);
 background:var(--amber-500);
 font-family:var(--mono);
 font-weight:700;
@@ -140,7 +147,7 @@ background:var(--amber-300);
 section{
 max-width:1100px;
 margin:auto;
-padding:80px 30px;
+padding:var(--space-10) var(--space-4);
 scroll-margin-top:70px;
 }
 h2{
@@ -149,17 +156,17 @@ color:var(--amber-500);
 font-weight:700;
 font-size:22px;
 letter-spacing:.3px;
-margin-bottom:25px;
+margin-bottom:var(--space-3);
 }
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
+gap:var(--space-2);
 }
 .card{
 background:var(--navy-800);
 border:1px solid var(--navy-700);
-padding:25px;
+padding:var(--space-3);
 border-radius:10px;
 transition:.25s;
 }
@@ -186,7 +193,7 @@ letter-spacing:.5px;
 text-transform:uppercase;
 padding:4px 10px;
 border-radius:4px;
-margin-top:14px;
+margin-top:var(--space-2);
 }
 .tag.ready{
 background:rgba(226,160,63,.15);
@@ -200,10 +207,10 @@ color:var(--text-secondary);
 display:flex;
 flex-wrap:wrap;
 gap:8px;
-margin-top:16px;
+margin-top:var(--space-2);
 margin-bottom:14px;
 }
-
+ 
 .tech-stack span{
 background:rgba(226,160,63,.12);
 border:1px solid rgba(226,160,63,.35);
@@ -214,7 +221,7 @@ font-size:12px;
 font-family:var(--mono);
 }
 .card .cta{
-margin-top:14px;
+margin-top:var(--space-2);
 font-family:var(--mono);
 font-size:13px;
 color:var(--amber-500);
@@ -231,9 +238,75 @@ border:1px solid var(--navy-700);
 color:var(--text-primary);
 border-radius:6px;
 }
+form{
+max-width:500px;
+margin-top:var(--space-3);
+}
+form label{
+font-family:var(--mono);
+font-size:13px;
+color:var(--text-secondary);
+display:block;
+margin-bottom:6px;
+}
+form input,
+form textarea{
+width:100%;
+background:var(--navy-800);
+border:1px solid var(--navy-700);
+color:var(--text-primary);
+padding:12px 14px;
+border-radius:6px;
+font-family:var(--sans);
+font-size:14px;
+margin-bottom:var(--space-2);
+}
+form input:focus,
+form textarea:focus{
+outline:none;
+border-color:var(--amber-500);
+}
+form textarea{
+resize:vertical;
+}
+form button{
+font-family:var(--mono);
+font-weight:700;
+font-size:14px;
+color:var(--navy-950);
+background:var(--amber-500);
+border:none;
+padding:14px 28px;
+border-radius:6px;
+cursor:pointer;
+transition:.2s;
+}
+form button:hover{
+background:var(--amber-300);
+}
+form button:disabled{
+opacity:.6;
+cursor:default;
+}
+.cv-link{
+display:inline-block;
+margin-top:var(--space-3);
+color:var(--navy-950);
+background:var(--amber-500);
+padding:14px 28px;
+border-radius:6px;
+text-decoration:none;
+font-family:var(--mono);
+font-weight:700;
+font-size:14px;
+transition:.2s;
+}
+.cv-link:hover{
+background:var(--amber-300);
+}
 footer{
 text-align:center;
-padding:40px;
+padding:var(--space-5);
 color:var(--text-secondary);
 font-family:var(--mono);
 font-size:13px;
@@ -257,11 +330,11 @@ font-size:13px;
 <h1>Zeina <span class="accent">Farghaly</span></h1>
 <h2>Computer Engineering Student</h2>
 <h2>Machine Learning • Deep Learning • Artificial Intelligence</h2>
-
+ 
 <p>
 I build machine learning models that turn real-world data into reliable predictions. From production-scale datasets to deep learning, I focus on developing, evaluating, and documenting AI solutions that solve practical problems.
 </p>
-
+ 
 <p style="margin-top:18px;">
 <strong>Proof:</strong> Built predictive models using TensorFlow and scikit-learn, developed deep learning classifiers, and improved production search ranking during my ML internship at FlyRank.
 </p>
@@ -318,7 +391,7 @@ Outside the internship, I've built a role-based hospital management system in Ja
 <div class="cards">
  
 <a href="ml-projects.html" class="card linkable">
-<h3>🧠 Machine Learning Portfolio</h3>
+<h3>Machine Learning Portfolio</h3>
 <p>
 A collection of machine learning and deep learning projects covering regression,
 classification, neural networks, and real-world applied machine learning.
@@ -333,7 +406,7 @@ classification, neural networks, and real-world applied machine learning.
 <div class="cta">View ML Portfolio →</div>
 </a>
 <a href="case-shms.html" class="card linkable">
-  <h3>🏥 Smart Hospital Management System</h3>
+  <h3>Smart Hospital Management System</h3>
   <p>
     Designed and developed a JavaFX desktop application for managing patients, doctors, appointments, prescriptions, and emergency queues using object-oriented programming and SQLite.
   </p>
@@ -343,16 +416,16 @@ classification, neural networks, and real-world applied machine learning.
   
   
 <a href="case-flyrank.html" class="card linkable">
-<h3>📈 FlyRank ML Internship — Content Refresh Prioritization</h3>
+<h3>FlyRank ML Internship — Content Refresh Prioritization</h3>
 <p>
 Built a scoring model to rank which pages to review first, using DuckDB on 9.8M rows of real search data. Verified a data contract, caught a label leak (AUC 1.000 → honest 0.598), and beat a hand-written baseline (Precision@500: 0.490 → 0.528).
 </p>
 <span class="tag ready">Full case study</span>
 <div class="cta">View the case →</div>
 </a>
-
+ 
 <a href="case-triage-agent.html" class="card linkable">
-<h3>🤖 Content-Refresh Triage Agent</h3>
+<h3>Content-Refresh Triage Agent</h3>
 <p>
 Turned the FlyRank capstone's trained model into a shipped tool: a Streamlit agent that reuses the model's real feature weights and uses Claude to explain each triage score in plain language for a non-technical editor.
 </p>
@@ -394,32 +467,26 @@ B.Sc. Computer Engineering
  
 <section id="contact">
 <h2>Contact Me</h2>
-
+ 
 <p>
 Have a question, project idea, or just want to get in touch? Send me a message below.
 </p>
-
+ 
 <form action="https://formspree.io/f/mjybwepq" method="POST" id="contact-form">
-
+ 
 <label for="name">Name</label>
-<br>
 <input type="text" id="name" name="name" required>
-<br><br>
-
+ 
 <label for="email">Email</label>
-<br>
 <input type="email" id="email" name="email" required>
-<br><br>
-
+ 
 <label for="message">Message</label>
-<br>
 <textarea id="message" name="message" rows="6" required></textarea>
-<br><br>
-
+ 
 <button type="submit" id="contact-submit-btn">
 Send Message
 </button>
-
+ 
 </form>
 <script>
 document.getElementById('contact-form').addEventListener('submit', function () {
@@ -428,36 +495,35 @@ document.getElementById('contact-form').addEventListener('submit', function () {
   btn.textContent = 'Sending…';
 });
 </script>
-
+ 
 <p style="margin-top:30px;">
 📧 <a href="mailto:zeinafarghaly@gmail.com">zeinafarghaly@gmail.com</a>
 <br><br>
-
+ 
 💻 GitHub:
 <a href="https://github.com/zeinafarghaly-arch" target="_blank">
 github.com/zeinafarghaly-arch
 </a>
-
+ 
 <br><br>
-
+ 
 🔗 LinkedIn:
 <a href="https://www.linkedin.com/in/zeina-farghaly-89b5382a8/" target="_blank">
 linkedin.com/in/zeina-farghaly-89b5382a8
 </a>
 </p>
-
-<a href="cv.docx" target="_blank"
-style="display:inline-block;margin-top:24px;color:#070b14;background:#38bdf8;padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:600;">
-📄 Download CV
+ 
+<a href="cv.docx" target="_blank" class="cv-link">
+Download CV
 </a>
-
+ 
 </section>
 </main>
  
 <footer>
 © 2026 Zeina Farghaly • Built with HTML & CSS
 </footer>
-
+ 
  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
