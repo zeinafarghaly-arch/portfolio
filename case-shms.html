@@ -5,160 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Smart Hospital Management System | Zeina Farghaly</title>
 <meta name="description" content="Case study: a Java/JavaFX hospital management system with patient records, an emergency priority queue, billing, and appointment handling.">
-<link rel="canonical" href="https://portfolio-tan-psi-79.vercel.app/case-shms.html">
+<link rel="canonical" href="https://zeina-farghaly.vercel.app/case-shms.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Smart Hospital Management System | Zeina Farghaly">
 <meta property="og:description" content="Case study: a Java/JavaFX hospital management system with patient records, an emergency priority queue, billing, and appointment handling.">
-<meta property="og:url" content="https://portfolio-tan-psi-79.vercel.app/case-shms.html">
-<meta property="og:image" content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png">
+<meta property="og:url" content="https://zeina-farghaly.vercel.app/case-shms.html">
+<meta property="og:image" content="https://zeina-farghaly.vercel.app/assets/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Smart Hospital Management System | Zeina Farghaly">
 <meta name="twitter:description" content="Case study: a Java/JavaFX hospital management system with patient records, an emergency priority queue, billing, and appointment handling.">
-<meta name="twitter:image" content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png">
+<meta name="twitter:image" content="https://zeina-farghaly.vercel.app/assets/social-preview.png">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-
+ 
  
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
  
-<style>
- 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
- 
-body{
-background:#070b14;
-color:#eef0f3;
-line-height:1.7;
-}
- 
-nav{
-display:flex;
-justify-content:center;
-gap:30px;
-padding:18px;
-background:#0d1524;
-border-bottom:1px solid #131c30;
-}
- 
-nav a{
-color:#94a1b8;
-text-decoration:none;
-font-weight:600;
-}
- 
-nav a:hover{
-color:#e2a03f;
-}
- 
-main{
-max-width:1000px;
-margin:auto;
-padding:50px 30px;
-}
- 
-.hero{
-text-align:center;
-margin-bottom:40px;
-}
- 
-.hero h1{
-font-size:46px;
-color:#e2a03f;
-}
- 
-.hero p{
-margin-top:15px;
-color:#94a1b8;
-}
- 
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
-margin:35px 0;
-}
- 
-.stat{
-background:#131c30;
-padding:20px;
-border-radius:15px;
-text-align:center;
-}
- 
-.stat h2{
-color:#e2a03f;
-font-size:32px;
-}
- 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:25px;
-}
- 
-.card{
-background:#131c30;
-padding:22px;
-border-radius:15px;
-}
- 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:18px;
-margin-top:20px;
-}
- 
-.gallery img{
-width:100%;
-height:auto;
-border-radius:12px;
-border:1px solid #1f2b45;
-}
- 
-.button{
-display:inline-block;
-margin-top:30px;
-background:#e2a03f;
-padding:14px 26px;
-border-radius:30px;
-color:#070b14;
-text-decoration:none;
-font-weight:600;
-}
- 
-h2{
-color:#e2a03f;
-margin:35px 0 15px;
-}
- 
-ul{
-padding-left:20px;
-}
- 
-footer{
-text-align:center;
-padding:35px;
-color:#94a1b8;
-}
- 
-h1,h2,nav a,.stat h3,.btn{font-family:'JetBrains Mono',monospace}
-</style>
+<link rel="stylesheet" href="styles.css">
  
 </head>
  
 <body>
  
 <nav>
-<a href="index.html">Home</a>
-<a href="index.html#projects">Projects</a>
+    <a href="index.html" class="logo">&lt;Z/&gt;</a>
+    <a href="index.html" class="link">Home</a>
+    <a href="index.html#projects" class="link">Projects</a>
 </nav>
  
 <main>
@@ -175,7 +48,7 @@ JavaFX Desktop Application • Software Engineering Project
 Designed and developed a full-featured hospital management system using Java, JavaFX, and SQLite. Implemented secure authentication, role-based dashboards, appointment scheduling, emergency queue management, billing, and patient records while applying object-oriented design principles and MVC architecture.
 </p>
  
-<a class="button" href="index.html#projects">
+<a class="btn" href="index.html#projects">
 ← Back to Portfolio
 </a>
  
@@ -209,26 +82,26 @@ Designed and developed a full-featured hospital management system using Java, Ja
 </div>
  
 </div>
-
+ 
 <h2>Project Highlights</h2>
-
+ 
 <div class="cards">
-
+ 
 <div class="card">
 <h3>Role-Based System</h3>
 <p>Implemented five user roles with separate dashboards, permissions, and authentication.</p>
 </div>
-
+ 
 <div class="card">
 <h3>Database Integration</h3>
 <p>Designed and connected an SQLite database using JDBC to manage hospital operations.</p>
 </div>
-
+ 
 <div class="card">
 <h3>Emergency Queue</h3>
 <p>Built a priority-based queue using Java's PriorityQueue to manage emergency cases efficiently.</p>
 </div>
-
+ 
 </div>
  
 <h2>Project Overview</h2>
@@ -449,39 +322,39 @@ Git
 <h2>Challenges & Lessons Learned</h2>
  
 <ul>
-
+ 
 <li>Designed a normalized SQLite database to support multiple hospital workflows.</li>
-
+ 
 <li>Built a multi-screen JavaFX desktop application using MVC architecture.</li>
-
+ 
 <li>Applied object-oriented programming concepts including inheritance, polymorphism, abstraction, and composition.</li>
-
+ 
 <li>Implemented a PriorityQueue to ensure emergency patients were treated before routine cases.</li>
-
+ 
 <li>Integrated JavaFX with SQLite using JDBC for persistent data storage.</li>
-
+ 
 <li>Worked collaboratively in a team to design, develop, and test the application within a 10-day project timeline.</li>
-
+ 
 </ul>
-
+ 
  <h2>Key Achievements</h2>
-
+ 
 <ul>
-
+ 
 <li>Developed a complete desktop hospital management application using Java, JavaFX, and SQLite.</li>
-
+ 
 <li>Implemented secure authentication with SHA-256 password hashing and role-based access control.</li>
-
+ 
 <li>Designed an emergency patient triage system using a PriorityQueue.</li>
-
+ 
 <li>Applied software engineering principles including MVC architecture and object-oriented design.</li>
-
+ 
 <li>Built database-driven features for appointments, billing, prescriptions, patient records, and room management.</li>
-
+ 
 </ul>
-
+ 
  <h2>Future Improvements</h2>
-
+ 
 <ul>
 <li>Develop a REST API for web and mobile integration.</li>
 <li>Migrate from SQLite to PostgreSQL or MySQL for scalability.</li>
@@ -490,7 +363,7 @@ Git
 <li>Deploy the system using Docker and cloud infrastructure.</li>
 </ul>
  
-<a class="button" href="index.html#projects">
+<a class="btn" href="index.html#projects">
  
 ← Return to Portfolio
  
@@ -506,4 +379,3 @@ Git
  
 </body>
 </html>
- 
