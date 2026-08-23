@@ -5,187 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Content-Refresh Triage Agent — From Model to Shipped Tool | Zeina Farghaly</title>
 <meta name="description" content="Case study: a deployed agent that reuses a real trained model's feature weights and adds Claude reasoning on top to explain triage calls in plain language.">
-<link rel="canonical" href="https://portfolio-tan-psi-79.vercel.app/case-triage-agent.html">
+<link rel="canonical" href="https://zeina-farghaly.vercel.app/case-triage-agent.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Content-Refresh Triage Agent — From Model to Shipped Tool | Zeina Farghaly">
 <meta property="og:description" content="Case study: a deployed agent that reuses a real trained model's feature weights and adds Claude reasoning on top to explain triage calls in plain language.">
-<meta property="og:url" content="https://portfolio-tan-psi-79.vercel.app/case-triage-agent.html">
-<meta property="og:image" content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png">
+<meta property="og:url" content="https://zeina-farghaly.vercel.app/case-triage-agent.html">
+<meta property="og:image" content="https://zeina-farghaly.vercel.app/assets/social-preview.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Content-Refresh Triage Agent — From Model to Shipped Tool | Zeina Farghaly">
 <meta name="twitter:description" content="Case study: a deployed agent that reuses a real trained model's feature weights and adds Claude reasoning on top to explain triage calls in plain language.">
-<meta name="twitter:image" content="https://portfolio-tan-psi-79.vercel.app/assets/social-preview.png">
+<meta name="twitter:image" content="https://zeina-farghaly.vercel.app/assets/social-preview.png">
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-
+ 
  
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
  
-<style>
- 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
- 
-body{
-background:#070b14;
-color:white;
-line-height:1.7;
-}
- 
-nav{
-display:flex;
-justify-content:center;
-gap:30px;
-padding:18px;
-background:#0d1524;
-border-bottom:1px solid #131c30;
-}
- 
-nav a{
-color:#94a1b8;
-text-decoration:none;
-font-weight:600;
-}
- 
-nav a:hover{
-color:#e2a03f;
-}
- 
-main{
-max-width:1000px;
-margin:auto;
-padding:50px 30px;
-}
- 
-.hero{
-text-align:center;
-margin-bottom:40px;
-}
- 
-.hero h1{
-font-size:42px;
-color:#e2a03f;
-}
- 
-.hero p{
-margin-top:15px;
-color:#94a1b8;
-}
- 
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
-margin:35px 0;
-}
- 
-.stat{
-background:#131c30;
-padding:20px;
-border-radius:15px;
-text-align:center;
-}
- 
-.stat h2{
-color:#e2a03f;
-font-size:28px;
-}
- 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-margin-top:25px;
-}
- 
-.card{
-background:#131c30;
-padding:22px;
-border-radius:15px;
-}
- 
-.card h3{
-color:#e2a03f;
-margin-bottom:10px;
-font-family:'JetBrains Mono',monospace;
-font-size:15px;
-}
- 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:18px;
-margin-top:20px;
-}
- 
-.gallery img{
-width:100%;
-height:auto;
-border-radius:12px;
-border:1px solid #1f2b45;
-}
- 
-.button{
-display:inline-block;
-margin-top:30px;
-background:#e2a03f;
-padding:14px 26px;
-border-radius:30px;
-color:#070b14;
-text-decoration:none;
-font-weight:700;
-}
- 
-h2{
-color:#e2a03f;
-margin:35px 0 15px;
-}
- 
-ul{
-padding-left:20px;
-}
- 
-.note{
-background:#131c30;
-border-left:3px solid #e2a03f;
-padding:14px 18px;
-border-radius:6px;
-color:#94a1b8;
-font-size:14px;
-margin-top:16px;
-}
- 
-code{
-font-family:'JetBrains Mono',monospace;
-background:#131c30;
-padding:2px 6px;
-border-radius:4px;
-font-size:13px;
-color:#e2a03f;
-}
- 
-footer{
-text-align:center;
-padding:35px;
-color:#94a1b8;
-}
- 
-h1,h2,nav a,.stat h3,.btn{font-family:'JetBrains Mono',monospace}
- 
-</style>
+<link rel="stylesheet" href="styles.css">
  
 </head>
  
 <body>
  
 <nav>
-<a href="index.html">Home</a>
-<a href="index.html#projects">Projects</a>
+    <a href="index.html" class="logo">&lt;Z/&gt;</a>
+    <a href="index.html" class="link">Home</a>
+    <a href="index.html#projects" class="link">Projects</a>
 </nav>
  
 <main>
@@ -201,10 +47,10 @@ From Trained Model to Shipped Tool • Applied AI Agent
 <p>
 The FlyRank capstone ended with a trained model sitting in a Colab notebook — useful for a research paper, useless to an actual editor. This project turns it into something an editor can open, drop a CSV into, and get a ranked, explained shortlist back from, with Claude reasoning over each score in plain language.
 </p>
-<a class="button" href="https://portfolio-ytfzpjckqhpzz3fz3zv26t.streamlit.app/" target="_blank">
+<a class="btn" href="https://portfolio-ytfzpjckqhpzz3fz3zv26t.streamlit.app/" target="_blank">
 Try the live agent →
 </a>
-<a class="button" href="index.html#projects">
+<a class="btn" href="index.html#projects">
 ← Back to Portfolio
 </a>
  
@@ -234,24 +80,24 @@ Try the live agent →
  
 </div>
  <h2>Project Highlights</h2>
-
+ 
 <div class="cards">
-
+ 
 <div class="card">
 <h3>Scoring Tool</h3>
 <p>A deterministic function combining 6 real page-health features using the same signed weights the trained model learned.</p>
 </div>
-
+ 
 <div class="card">
 <h3>Reasoning Layer</h3>
 <p>Claude explains why a page landed where it did, in plain language, without re-inventing the score itself.</p>
 </div>
-
+ 
 <div class="card">
 <h3>Streamlit UI</h3>
 <p>Batch mode (upload a CSV, get a ranked shortlist) and single-page mode, deployed publicly and free.</p>
 </div>
-
+ 
 </div>
  
 <h2>The Problem</h2>
@@ -344,7 +190,7 @@ A publicly deployed tool, not just a notebook result: <a href="https://portfolio
 The scoring weights are reused from the real model trained during the FlyRank internship (see the <a href="case-flyrank.html" style="color:#e2a03f">FlyRank case study</a>). Sample data only — no client names, domains, or private queries appear in this project.
 </div>
  
-<a class="button" href="index.html#projects">
+<a class="btn" href="index.html#projects">
 ← Return to Portfolio
 </a>
  
