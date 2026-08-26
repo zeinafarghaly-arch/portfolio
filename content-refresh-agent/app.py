@@ -66,11 +66,9 @@ if mode == "Batch (CSV upload)":
             st.error(str(e))
             st.stop()
  
-        st.subheader("Ranked pages")
+          st.subheader("Ranked pages")
         st.dataframe(
-            scored[["content_id", "priority_score"] + REQUIRED_COLUMNS].style.format(
-                {"priority_score": "{:.3f}"}
-            ),
+            scored[["content_id", "priority_score"] + REQUIRED_COLUMNS],
             use_container_width=True,
         )
  
